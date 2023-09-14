@@ -1477,6 +1477,11 @@ aframe-event-set-component@^5.0.0:
   dependencies:
     debug "^2.6.9"
 
+aframe-orbit-controls@^1.3.1:
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/aframe-orbit-controls/-/aframe-orbit-controls-1.3.1.tgz#498776812159d9715ede8653992da840db029a66"
+  integrity sha512-2QZmbGg61gyn0v3huAkwUdWtPdNq1q8R0+lyrYaF5Gt0c2hYti7CFQE5eps5maiLyxsV9SN7wz8VyeQHGQWdZg==
+
 aframe-react@^4.4.0:
   version "4.4.0"
   resolved "https://registry.yarnpkg.com/aframe-react/-/aframe-react-4.4.0.tgz#f8af660bc4f64746d7cddb065ad9cc5e88f358b9"
