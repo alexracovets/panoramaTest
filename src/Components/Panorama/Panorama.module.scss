@@ -1,0 +1,16 @@
+.panorama__close {
+    position: absolute;
+    z-index: 10;
+    right: 2rem;
+    top: 2rem;
+    font-size: 2rem;
+    color: black;
+    display: grid;
+    place-items: center;
+    background: #FFE00B;
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 50%;
+    cursor: pointer;
+}
+ 

@@ -1,0 +1,11 @@
+.logo {
+    position: absolute;
+    z-index: 11;
+    right: 1.875rem;
+    bottom: 1.25rem;
+    width: 8.125rem;
+
+    @media (max-width:1024px) {
+        bottom: 2.25rem;
+    }
+}

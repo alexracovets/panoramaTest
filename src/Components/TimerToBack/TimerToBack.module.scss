@@ -1,0 +1,89 @@
+.to_back__wrapper {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.55);
+
+    &.active {
+        display: flex;
+        z-index: 20;
+    }
+
+    .to_back__massage {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .to_back__text {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #FFE100;
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        .to_back__timer {
+
+            .timer_countdown {
+                font-size: 6.5rem;
+                font-weight: 700;
+                text-align: center;
+                display: block;
+                color: red;
+
+                @media (max-width:620px) {
+                    font-size: 5.5rem;
+                }
+            }
+
+            .timer_stripe__wrapper {
+                position: relative;
+                width: 100%;
+                height: 1.25rem;
+                background-color: #f2f2f2;
+                border-radius: 0.625rem;
+                overflow: hidden;
+                margin: 2rem auto;
+
+                .timer_stripe {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: red;
+                    border-radius: 0.625rem;
+                    transition: all 1.1s linear;
+                }
+            }
+        }
+
+        button {
+            font-size: 1.25rem;
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: 700;
+            border: none;
+            padding: 0.5rem 1rem;
+            background-color: #FFE100;
+            cursor: pointer;
+        }
+    }
+}
+
+@keyframes stripeAnimation {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: -200% 0;
+    }
+}

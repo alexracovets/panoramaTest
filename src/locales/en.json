@@ -1,0 +1,64 @@
+{
+    "language": "EN",
+    "annotation": {
+        "first": {
+            "title": "Street",
+            "tag": "Cages for collecting plastic bottles",
+            "location": "Location - opposite to Check Point 1"
+        },
+        "second": {
+            "title": "4th floor",
+            "tag": "Containers for waste sorting",
+            "location": "Location - food court, 4th floor of the Support Office"
+        },
+        "third": {
+            "title": "Kaizen",
+            "tag": "Kaizen park",
+            "location": "Location - across from the Support Office"
+        },
+        "fourth": {
+            "title": "Reception",
+            "tag": "Boxes for collecting used batteries and disposable e-cigarettes",
+            "location": "Location - across from the reception of the Support Office"
+        },
+        "fifth": {
+            "title": "Bicycle parking",
+            "tag": "Bicycle parking",
+            "location": "Location - near the Check Point 1"
+        },
+        "sixth": {
+            "title": "Food Court of the Order Picking Shop",
+            "tag": "Containers for waste sorting",
+            "location": "Location - Food Court of the Order Picking Shop"
+        },
+        "seventh": {
+            "title": "Sports ground",
+            "tag": "Sports zone",
+            "location": "Location - recreation area on the DC territory"
+        },
+        "eighth": {
+            "title": "DC Food court",
+            "tag": "Containers for waste sorting",
+            "location": "Location - food court of the Distribution Center"
+        },
+        "ninth": {
+            "title": "Recycling Center",
+            "tag": "Recycling Center",
+            "location": "Location - Distribution Center"
+        }
+    },
+    "menu": {
+        "name": "Menu",
+        "paper": "Paper",
+        "glass": "Glass",
+        "plastic": "Plastic",
+        "metal": "Metal",
+        "bio": "Bio",
+        "ecoZone": "Eco Zone",
+        "otherWaste": "Other Waste",
+        "ecoReport": "Eco Report"
+    },
+    "isHere": "Are you here?",
+    "yes": "Yes",
+    "link": "Open Link"
+}

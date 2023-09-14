@@ -1,0 +1,47 @@
+html {
+    font-size: 16px;
+}
+
+body {
+    margin: 0 auto;
+    background-color: #fbf6e3;
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Archivo', sans-serif;
+}
+
+@media (min-width: 1921px) {
+    html {
+        font-size: 0.897vw;
+    }
+}
+
+/* Работает в Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: blue transparent;
+}
+
+/* Работает в Chrome, Edge и Safari */
+*::-webkit-scrollbar {
+    width: 0.5rem;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: white;
+    border-radius: 20px;
+    border: 2px solid rgba(128, 128, 128, 0.082);
+}
+
+.panorama {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+html.a-fullscreen .panorama .a-canvas {
+    position: absolute !important;
+}

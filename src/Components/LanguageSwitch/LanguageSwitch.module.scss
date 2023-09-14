@@ -1,0 +1,39 @@
+.language_switch {
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: "Oswald", sans-serif;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media (max-width:1024px) {
+        font-size: 1rem;
+        margin-top: 0.5rem;
+    }
+
+    @media (max-width:620px) {
+        font-size: 0.8rem;
+    }
+
+    span {
+        cursor: pointer;
+    }
+
+    .spliter {
+        margin: 0 0.25rem;
+        width: 0.2rem;
+        height: 100%;
+        background-color: black;
+
+        @media (max-width:1024px) {
+            margin: 0 0.15rem;
+            width: 0.05rem;
+            height: 0.8rem;
+        }
+
+        @media (max-width:620px) {
+            margin: 0 0.1rem;
+        }
+    }
+}
