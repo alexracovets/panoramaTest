@@ -36,7 +36,14 @@ export default function MyScene() {
     return (
         <>
             <Scene cursor="rayOrigin: mouse" raycaster="objects: .cursor-listener" class="panorama" vr-mode-ui="enabled: false" exit-vr>
-                <a-camera orbit-controls="target: 0 1.6 -0.5; minDistance: 0.5; maxDistance: 180; initialPosition: 0 5 15" look-controls="magicWindowTrackingEnabled: false">
+                <a-camera
+                    orbit-controls="target: 0 0 0; minDistance: 0.5; maxDistance: 180; initialPosition: 0 0 15; dampingFactor: 0.2;  rotateSpeed: 1"
+                    look-controls="magicWindowTrackingEnabled: false"
+                    maxPolarAngle="0"
+                    minPolarAngle="0"
+                    minAzimuthAngle="0"
+                    maxAzimuthAngle="180"
+                >
                     <a-sky src={texture} rotation="0 -130 0" crossorigin="anonymous"></a-sky>
                     {
                         panorama.panoramaInteractive.mask.length > 0 && (
