@@ -34,7 +34,7 @@ export default function MyScene() {
 
     return (
         <>
-            <Scene cursor="rayOrigin: mouse" raycaster="objects: .cursor-listener" class="panorama" vr-mode-ui="enabled: true">
+            <Scene cursor="rayOrigin: mouse" raycaster="objects: .cursor-listener" class="panorama" vr-mode-ui="enabled: false">
                 <a-camera fov="90" ></a-camera>
                 <a-sky src={texture} rotation="0 -130 0" crossorigin="anonymous"></a-sky>
                 {
@@ -113,6 +113,7 @@ export default function MyScene() {
                     )
                 }
             </Scene>
+            <a-entity class="vr-mode-ui" active="false"></a-entity>
             <i className={s.panorama__close + ' bi bi-x'} onClick={closePanorama}></i>
         </>
     );
