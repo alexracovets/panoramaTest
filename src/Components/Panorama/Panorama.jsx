@@ -35,7 +35,7 @@ export default function MyScene() {
 
     return (
         <>
-            <Scene cursor="rayOrigin: mouse" raycaster="objects: .cursor-listener" class="panorama" >
+            <Scene cursor="rayOrigin: mouse" raycaster="objects: .cursor-listener" class="panorama" vr-mode-ui="enabled: false" exit-vr>
                 <a-camera orbit-controls="target: 0 1.6 -0.5; minDistance: 0.5; maxDistance: 180; initialPosition: 0 5 15">
                     <a-sky src={texture} rotation="0 -130 0" crossorigin="anonymous"></a-sky>
                     {
