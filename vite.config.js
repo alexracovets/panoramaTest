@@ -6,7 +6,7 @@ export default defineConfig({
     reactRefresh(),
   ],
   build: {
-    target: 'es2015', // Транспілюйте код на ES2015 для підтримки старих браузерів
-    polyfillDynamicImport: false, // Вимкніть поліфіл для динамічного імпорту
+    target: 'es2015', 
+    polyfillDynamicImport: false,
   },
 });

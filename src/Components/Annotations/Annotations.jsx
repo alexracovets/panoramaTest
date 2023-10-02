@@ -42,7 +42,7 @@ export default function Annotations() {
         <>
             {
                 //Вивід всії анотацій
-                annotationList.map((item) => {
+                annotationList.map((item, index) => {
                     const texture = new THREE.TextureLoader().load(
                         `data:image/svg+xml,
                     ${encodeURIComponent(
@@ -50,8 +50,7 @@ export default function Annotations() {
                                 <Circle colors={item.color} />
                             )
                         )}`
-                    );
-
+                    ); 
                     const singleTag = (object, color) => {
                         const findedItem = object.find(mass => mass.color === color[0]);
                         return findedItem.annotationImage;
@@ -59,6 +58,7 @@ export default function Annotations() {
                     const loader = new THREE.TextureLoader();
                     const showSVG = item.color.length === 1 ? singleTag(menuBtn, item.color) : '';
                     const texture2 = loader.load(showSVG);
+                    texture2.colorSpace = THREE.SRGBColorSpace;
                     const spriteMaterial = new THREE.SpriteMaterial({ map: texture });
                     const spriteMaterial2 = new THREE.SpriteMaterial({ map: texture2 });
                     const isVisible = item.color.length !== 0;
@@ -88,7 +88,7 @@ export default function Annotations() {
                         });
                     }
                     return (
-                        <group key={item.id}>
+                        <group key={index}>
                             {/* Відмальвка маркера */}
                             <sprite
                                 ref={spriteRef}

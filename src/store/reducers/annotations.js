@@ -10,49 +10,76 @@ const annotations = createSlice({
                 tag: 'annotation.first.tag',
                 location: 'annotation.first.location',
                 src: './img/pop_annotation/1.jpg',
-                link_ua: "https://storage.net-fs.com/hosting/7696236/6/",
-                link_en: "https://storage.net-fs.com/hosting/7696236/11/",
                 cameraPosition: [-9.43, 8.94, 16.67],
                 color: ["#8f680e"],
                 annotationImage: "./img/annotations/plastic.svg",
-                music: '0',
+                music: '1',
                 panorama: true,
                 panoramaStart: '/panorams/1/1.jpg',
-                panoramaInteractive: {
-                    mask: [
-                        {
-                            image: '/panorams/1/mask/1_1.png',
-                            width: '382',
-                            height: '473',
-                            scale: '0.480 0.660 1.000',
-                            rotation: '-16.970 -36.180 2.140',
-                            position: '124.475 -179.539 -243.018'
-                        },
-                        {
-                            image: '/panorams/1/mask/1_2.png',
-                            width: '382',
-                            height: '473',
-                            scale: '0.480 0.660 1.000',
-                            rotation: '-18.550 -62.810 -1.830',
-                            position: '273.649 -178.960 -97.441'
-                        }
-                    ],
-                    info: [
-                        {
-                            image: '/img/info.svg',
-                            position: '118.052 -88.646 -256.116',
-                            rotation: '-16.970 -36.180 2.140',
-                            scale: '30 30 1'
-                        },
-                        {
-                            image: '/img/info.svg',
-                            position: '291.283 -92.774 -96.960',
-                            rotation: '-16.748 -74.427 9.666',
-                            scale: '30 30 1'
-                        }
-                    ]
-                },
-                id: 1
+                panoramaInteractive: [
+                    {
+                        current: '/panorams/1/1.jpg',
+                        mask: [
+                            {
+                                image: '/panorams/1/mask/1_1.png',
+                                args: [38.2, 44.3],
+                                position: [167.40, -131.64, -329.4],
+                                rotation: [-0.42, -0.41, -0.19],
+                                scale: [6.85, 7.13, 1],
+                                content: {
+                                    title: 'panoramaPopUp.street.title',
+                                    text: [
+                                        'panoramaPopUp.street.text.1',
+                                        'panoramaPopUp.street.text.2'
+                                    ]
+                                }
+                            },
+                            {
+                                image: '/panorams/1/mask/1_2.png',
+                                args: [38.2, 44.3],
+                                position: [261, -93, -98],
+                                rotation: [-0.72, -0.99, -0.67],
+                                scale: [5.0, 5.25, 1],
+                                content: {
+                                    title: 'panoramaPopUp.street.title',
+                                    text: [
+                                        'panoramaPopUp.street.text.1',
+                                        'panoramaPopUp.street.text.2'
+                                    ]
+                                }
+                            }
+                        ],
+                        info: [
+                            {
+                                image: '/panorams/info.svg',
+                                position: [90, -25, -200],
+                                rotation: [0, -0.6, 0],
+                                scale: [25, 25, 1],
+                                content: {
+                                    title: 'panoramaPopUp.street.title',
+                                    text: [
+                                        'panoramaPopUp.street.text.1',
+                                        'panoramaPopUp.street.text.2'
+                                    ]
+                                }
+                            },
+                            {
+                                image: '/panorams/info.svg',
+                                position: [255, -30, -87],
+                                rotation: [-0.30, -0.90, -0.10],
+                                scale: [25, 25, 1],
+                                content: {
+                                    title: 'panoramaPopUp.street.title',
+                                    text: [
+                                        'panoramaPopUp.street.text.1',
+                                        'panoramaPopUp.street.text.2'
+                                    ]
+                                }
+                            }
+                        ],
+                        other: []
+                    },
+                ]
             },
             {
                 position: [-7.4, 1.65, 7.5],
@@ -60,14 +87,67 @@ const annotations = createSlice({
                 tag: 'annotation.second.tag',
                 location: 'annotation.second.location',
                 src: './img/pop_annotation/2.jpg',
-                link_ua: "https://storage.net-fs.com/hosting/7696236/5/",
-                link_en: "https://storage.net-fs.com/hosting/7696236/16/",
                 cameraPosition: [-5.24, 5.72, 15.05],
                 color: ["#0d276b", "#0e3d02", "#8f680e", "#940807", "#2C1902", "#4a4848"],
                 annotationImage: "",
-                music: '0',
-                panorama: false,
-                panoramaStart: '',
+                music: '2',
+                panorama: true,
+                panoramaStart: '/panorams/2/1.jpg',
+                panoramaInteractive: [
+                    {
+                        current: '/panorams/2/1.jpg',
+                        mask: [],
+                        info: [
+                            {
+                                image: '/panorams/info.svg',
+                                position: [100, 8, -150],
+                                rotation: [0, -0.796, 0],
+                                scale: [25, 25, 1],
+                                content: {
+                                    title: 'panoramaPopUp.floor.first.title',
+                                    text: [
+                                        'panoramaPopUp.floor.first.text.1',
+                                        'panoramaPopUp.floor.first.text.2'
+                                    ]
+                                }
+                            }
+                        ],
+                        other: [
+                            {
+                                portal: '/panorams/2/2.jpg',
+                                position: [18, -7, 12],
+                                rotation: [0, 2.38, 0],
+                                scale: [1, 1, 1]
+                            },
+                        ]
+                    },
+                    {
+                        current: '/panorams/2/2.jpg',
+                        mask: [],
+                        info: [
+                            {
+                                image: '/panorams/info.svg',
+                                position: [70, -45, -180],
+                                rotation: [0, -0.34, 0],
+                                scale: [25, 25, 1],
+                                content: {
+                                    title: 'panoramaPopUp.floor.second.title',
+                                    text: [
+                                        'panoramaPopUp.floor.second.text.1'
+                                    ]
+                                }
+                            }
+                        ],
+                        other: [
+                            {
+                                portal: '/panorams/2/1.jpg',
+                                position: [18, -7, 0],
+                                rotation: [0, 3, 0],
+                                scale: [0.8, 1, 0.8]
+                            },
+                        ]
+                    },
+                ],
                 id: 2
             },
             {
@@ -76,65 +156,310 @@ const annotations = createSlice({
                 tag: 'annotation.third.tag',
                 location: 'annotation.third.location',
                 src: './img/pop_annotation/3.jpg',
-                link_ua: "https://storage.net-fs.com/hosting/7696236/4/",
-                link_en: "https://storage.net-fs.com/hosting/7696236/17/",
                 cameraPosition: [-9.37, 6.99, 9.93],
                 color: ["#b8b8b8"],
                 annotationImage: "./img/annotations/eco-zone.svg",
-                music: '0',
+                music: '3',
                 panorama: true,
-                panoramaStart: '/panorams/2/1.jpg',
-                panoramaInteractive: {
-                    mask: [],
-                    info: [],
-                    portals: [
-                        {
-                            current: '/panorams/2/1.jpg',
-                            other: [
-                                {
-                                    portal: '/panorams/2/2.jpg',
-                                    position: '250 -90 -300',
-                                    scale: '60 40 1',
-                                    rotation: '-80 0 0'
-                                },
-                                {
-                                    portal: '/panorams/2/3.jpg',
-                                    position: '355 -70 -175',
-                                    scale: '60 40 1',
-                                    rotation: '-90 -90 -30'
-                                },
-                                {
-                                    portal: '/panorams/2/4.jpg',
-                                    position: '350 -130 25',
-                                    scale: '60 40 1',
-                                    rotation: '-90 -90 0'
-                                },
-                                {
-                                    portal: '/panorams/2/5.jpg',
-                                    position: '220 -110 305',
-                                    scale: '60 40 1',
-                                    rotation: '-90 -120 10'
-                                },
-                            ]
-                        },
-                        {
-                            current: '/panorams/2/2.jpg',
-                            other: []
-                        },
-                        {
-                            current: '/panorams/2/3.jpg',
-                            other: []
-                        },
-                        {
-                            current: '/panorams/2/4.jpg',
-                            other: []
-                        },
-                        {
-                            current: '/panorams/2/5.jpg',
-                            other: []
-                        }
-                    ]
-                },
+                panoramaStart: '/panorams/3/1.jpg',
+                panoramaInteractive: [
+                    {
+                        current: '/panorams/3/1.jpg',
+                        mask: [],
+                        info: [],
+                        other: [
+                            {
+                                portal: '/panorams/3/2.jpg',
+                                position: [14, -7, 24],
+                                rotation: [0, 2.58, 0],
+                                scale: [1.5, 1, 1.5]
+                            },
+                            {
+                                portal: '/panorams/3/3.jpg',
+                                position: [22, -7, -21.5],
+                                rotation: [0, -2, 0],
+                                scale: [1, 1, 1]
+                            },
+                            {
+                                portal: '/panorams/3/4.jpg',
+                                position: [30, -7, 1],
+                                rotation: [0, 3.14, -0.1],
+                                scale: [1.2, 1, 1.2]
+                            },
+                            {
+                                portal: '/panorams/3/5.jpg',
+                                position: [47.0, -7, -23.0],
+                                rotation: [0.16, 2.56, -0.09],
+                                scale: [1.5, 1, 1.5]
+                            },
+                        ]
+                    },
+                    {
+                        current: '/panorams/3/2.jpg',
+                        mask: [],
+                        info: [],
+                        other: [
+                            {
+                                portal: '/panorams/3/1.jpg',
+                                position: [-6, -7, -30],
+                                rotation: [0, -2.02, 0],
+                                scale: [1.2, 1, 1.2]
+                            },
+                            {
+                                portal: '/panorams/3/5.jpg',
+                                position: [32, -7, 18],
+                                rotation: [0, 2.4, 0],
+                                scale: [1.2, 1, 1.2]
+                            },
+                            {
+                                portal: '/panorams/3/6.jpg',
+                                position: [-3.5, -7, 32],
+                                rotation: [0, 1.9, 0],
+                                scale: [1.2, 1, 1.2]
+                            },
+                            {
+                                portal: '/panorams/3/7.jpg',
+                                position: [41, -7, -15],
+                                rotation: [0.15, -3.82, -0.29],
+                                scale: [1.2, 1, 1.2]
+                            },
+                            {
+                                portal: '/panorams/3/8.jpg',
+                                position: [-29, -7, 24],
+                                rotation: [0, 1.08, 0],
+                                scale: [1.2, 1, 1.2]
+                            },
+                        ]
+                    },
+                    {
+                        current: '/panorams/3/3.jpg',
+                        mask: [],
+                        info: [
+                            {
+                                image: '/panorams/info.svg',
+                                position: [26, -9, -141],
+                                rotation: [0, 0, 0],
+                                scale: [25, 25, 1],
+                                content: {
+                                    title: 'panoramaPopUp.kaizen.title',
+                                    text: [
+                                        'panoramaPopUp.kaizen.text.1',
+                                        'panoramaPopUp.kaizen.text.2',
+                                        'panoramaPopUp.kaizen.text.3'
+                                    ]
+                                }
+                            }
+                        ],
+                        other: [
+                            {
+                                portal: '/panorams/3/1.jpg',
+                                position: [-22, -7, 32],
+                                rotation: [0, 0.7, 0],
+                                scale: [1.5, 1, 1.5]
+                            },
+                            {
+                                portal: '/panorams/3/5.jpg',
+                                position: [24, -7, 6],
+                                rotation: [0, 2.63, 0],
+                                scale: [1, 1, 1]
+                            },
+                            {
+                                portal: '/panorams/3/7.jpg',
+                                position: [3, -7, -13],
+                                rotation: [0, -1.87, 0],
+                                scale: [1.5, 1, 1.5]
+                            },
+                        ]
+                    },
+                    {
+                        current: '/panorams/3/4.jpg',
+                        mask: [],
+                        info: [],
+                        other: [
+                            {
+                                portal: '/panorams/3/1.jpg',
+                                position: [-34, -7, -4.7],
+                                rotation: [0, 0.44, 0],
+                                scale: [1, 1, 1]
+                            },
+                            {
+                                portal: '/panorams/3/2.jpg',
+                                position: [-3, -7, 10.9],
+                                rotation: [0, 1.25, 0],
+                                scale: [0.6, 1, 0.6]
+                            },
+                            {
+                                portal: '/panorams/3/3.jpg',
+                                position: [-6, -7, -35],
+                                rotation: [0, 4.4, 0],
+                                scale: [1.3, 1, 1.3]
+                            },
+                            {
+                                portal: '/panorams/3/5.jpg',
+                                position: [32, -7, -9],
+                                rotation: [0, 3.5, 0],
+                                scale: [1.2, 1, 1.2]
+                            }
+                        ]
+                    },
+                    {
+                        current: '/panorams/3/5.jpg',
+                        mask: [],
+                        info: [],
+                        other: [
+                            {
+                                portal: '/panorams/3/3.jpg',
+                                position: [4, -7, -35],
+                                rotation: [0, -1.7, 0],
+                                scale: [1.5, 1, 1.5]
+                            },
+                            {
+                                portal: '/panorams/3/10.jpg',
+                                position: [-15, -7, 13],
+                                rotation: [0, 0.68, 0],
+                                scale: [1, 1, 1]
+                            }
+                        ]
+                    },
+                    {
+                        current: '/panorams/3/6.jpg',
+                        mask: [],
+                        info: [],
+                        other: [
+                            {
+                                portal: '/panorams/3/2.jpg',
+                                position: [-1, -7, -17.4],
+                                rotation: [0, 4.75, 0],
+                                scale: [1, 1, 1]
+                            },
+                            {
+                                portal: '/panorams/3/5.jpg',
+                                position: [13, -7, 21.1],
+                                rotation: [0, 3.16, 0],
+                                scale: [1, 1, 1]
+                            },
+                            {
+                                portal: '/panorams/3/9.jpg',
+                                position: [-10, -7, 19.4],
+                                rotation: [0, -0.08, 0.04],
+                                scale: [1, 1, 1]
+                            },
+                            {
+                                portal: '/panorams/3/3.jpg',
+                                position: [54, -7, -29],
+                                rotation: [0, 3.22, -0.20],
+                                scale: [1.5, 1, 1.5]
+                            },
+                            {
+                                portal: '/panorams/3/5.jpg',
+                                position: [44, -7, 3],
+                                rotation: [0.15, -3.91, -0.26],
+                                scale: [1.2, 1, 1.2]
+                            }
+                        ]
+                    },
+                    {
+                        current: '/panorams/3/7.jpg',
+                        mask: [],
+                        info: [],
+                        other: [
+                            {
+                                portal: '/panorams/3/1.jpg',
+                                position: [25, -7, -11],
+                                rotation: [0, -2.81, 0],
+                                scale: [1, 1, 1]
+                            },
+                            {
+                                portal: '/panorams/3/5.jpg',
+                                position: [9, -7, -21],
+                                rotation: [0, -1.35, 0],
+                                scale: [0.9, 1, 0.9]
+                            },
+                        ]
+                    },
+                    {
+                        current: '/panorams/3/8.jpg',
+                        mask: [],
+                        info: [],
+                        other: [
+                            {
+                                portal: '/panorams/3/2.jpg',
+                                position: [2, -7, -30],
+                                rotation: [0, -1.64, 0],
+                                scale: [1.2, 1, 1.2]
+                            },
+                            {
+                                portal: '/panorams/3/5.jpg',
+                                position: [51, -7, -32],
+                                rotation: [0, -2.18, 0],
+                                scale: [1.2, 1, 1.2]
+                            },
+                            {
+                                portal: '/panorams/3/9.jpg',
+                                position: [22, -7, -9],
+                                rotation: [0, -2.5, 0],
+                                scale: [1.2, 1, 1.2]
+                            }
+                        ]
+                    },
+                    {
+                        current: '/panorams/3/9.jpg',
+                        mask: [],
+                        info: [],
+                        other: [
+                            {
+                                portal: '/panorams/3/2.jpg',
+                                position: [-10, -7, -26.0],
+                                rotation: [0, 4.08, 0],
+                                scale: [1, 1, 1]
+                            },
+                            {
+                                portal: '/panorams/3/2.jpg',
+                                position: [20, -7, -24],
+                                rotation: [0, -1.18, 0],
+                                scale: [1.2, 1, 1.2]
+                            },
+                            {
+                                portal: '/panorams/3/5.jpg',
+                                position: [43, -7, -10.4],
+                                rotation: [0, -2.64, 0],
+                                scale: [1.2, 1, 1.2]
+                            },
+                            {
+                                portal: '/panorams/3/8.jpg',
+                                position: [-15, -7, 0.5],
+                                rotation: [0, -0.08, 0],
+                                scale: [1, 1, 1]
+                            },
+                        ]
+                    },
+                    {
+                        current: '/panorams/3/10.jpg',
+                        mask: [],
+                        info: [],
+                        other: [
+                            {
+                                portal: '/panorams/3/5.jpg',
+                                position: [16, -7, -7],
+                                rotation: [0, 3.68, 0],
+                                scale: [1, 1, 1]
+                            },
+                            {
+                                portal: '/panorams/3/2.jpg',
+                                position: [-19, -7, -11.4],
+                                rotation: [0, -1.28, 0],
+                                scale: [1, 1, 1]
+                            },
+
+                            {
+                                portal: '/panorams/3/9.jpg',
+                                position: [-29, -7, 5.9],
+                                rotation: [0, 0, 0],
+                                scale: [1, 1, 1]
+                            },
+                        ]
+                    }
+                ],
                 id: 3
             },
             {
@@ -143,14 +468,70 @@ const annotations = createSlice({
                 tag: 'annotation.fourth.tag',
                 location: 'annotation.fourth.location',
                 src: './img/pop_annotation/4.jpg',
-                link_ua: "https://storage.net-fs.com/hosting/7696236/10/",
-                link_en: "https://storage.net-fs.com/hosting/7696236/13/",
                 cameraPosition: [-8.23, 6.1, 15.73],
                 color: ["#4a4848"],
                 annotationImage: "./img/annotations/eco-report.svg",
-                music: '0',
-                panorama: false,
-                panoramaStart: '',
+                music: '4',
+                panorama: true,
+                panoramaStart: '/panorams/4/1.jpg',
+                panoramaInteractive: [
+                    {
+                        current: '/panorams/4/1.jpg',
+                        mask: [],
+                        info: [
+                            {
+                                image: '/panorams/info.svg',
+                                position: [165, -30, -130],
+                                rotation: [0, -0.79, 0],
+                                scale: [25, 25, 1],
+                                content: {
+                                    title: 'panoramaPopUp.reception.title',
+                                    text: [
+                                        'panoramaPopUp.reception.text.1',
+                                        'panoramaPopUp.reception.text.2',
+                                        'panoramaPopUp.reception.text.3'
+                                    ]
+                                }
+                            }
+                        ],
+                        other: [
+                            {
+                                portal: '/panorams/4/2.jpg',
+                                position: [15, -7, 3.1],
+                                rotation: [0, 2.95, 0],
+                                scale: [1, 1, 1]
+                            },
+                        ]
+                    },
+                    {
+                        current: '/panorams/4/2.jpg',
+                        mask: [],
+                        info: [
+                            {
+                                image: '/panorams/info.svg',
+                                position: [250, -20, -30],
+                                rotation: [0, -1.57, 0],
+                                scale: [25, 25, 1],
+                                content: {
+                                    title: 'panoramaPopUp.reception.title',
+                                    text: [
+                                        'panoramaPopUp.reception.text.1',
+                                        'panoramaPopUp.reception.text.2',
+                                        'panoramaPopUp.reception.text.3'
+                                    ]
+                                }
+                            }
+                        ],
+                        other: [
+                            {
+                                portal: '/panorams/4/1.jpg',
+                                position: [15, -7, -11.1],
+                                rotation: [0, 3.78, 0],
+                                scale: [1, 1, 1]
+                            },
+                        ]
+                    }
+                ],
                 id: 4
             },
             {
@@ -165,8 +546,136 @@ const annotations = createSlice({
                 color: ["#b8b8b8"],
                 annotationImage: "./img/annotations/eco-zone.svg",
                 music: '5',
-                panorama: false,
-                panoramaStart: '',
+                panorama: true,
+                panoramaStart: '/panorams/5/1.jpg',
+                panoramaInteractive: [
+                    {
+                        current: '/panorams/5/1.jpg',
+                        mask: [],
+                        info: [],
+                        other: [
+                            {
+                                portal: '/panorams/5/2.jpg',
+                                position: [-21, -7, -14],
+                                rotation: [0, -0.74, 0],
+                                scale: [1, 1, 1]
+                            },
+                            {
+                                portal: '/panorams/5/3.jpg',
+                                position: [5, -10, -28],
+                                rotation: [0.12, 3.23, 0],
+                                scale: [1, 1, 1]
+                            },
+                            {
+                                portal: '/panorams/5/4.jpg',
+                                position: [0, -9, -43],
+                                rotation: [0.15, -1.5, 0],
+                                scale: [1, 1, 1]
+                            },
+                        ]
+                    },
+                    {
+                        current: '/panorams/5/2.jpg',
+                        mask: [],
+                        info: [],
+                        other: [
+                            {
+                                portal: '/panorams/5/1.jpg',
+                                position: [-21, -10, -12],
+                                rotation: [0, -0.37, 0],
+                                scale: [1, 1, 1]
+                            },
+                            {
+                                portal: '/panorams/5/6.jpg',
+                                position: [-1, -7, 23],
+                                rotation: [0, 1.4, 0],
+                                scale: [1, 1, 1]
+                            },
+                        ]
+                    },
+                    {
+                        current: '/panorams/5/3.jpg',
+                        mask: [],
+                        info: [],
+                        other: [
+                            {
+                                portal: '/panorams/5/1.jpg',
+                                position: [24, -10, -9.5],
+                                rotation: [0, -1.59, 0],
+                                scale: [1, 1, 1]
+                            },
+                            {
+                                portal: '/panorams/5/4.jpg',
+                                position: [24, -10, 9.5],
+                                rotation: [0, 1.55, 0],
+                                scale: [1, 1, 1]
+                            },
+                            {
+                                portal: '/panorams/5/5.jpg',
+                                position: [-23, -9, 4],
+                                rotation: [0, 1.5, 0],
+                                scale: [1, 1, 1]
+                            },
+                        ]
+                    },
+                    {
+                        current: '/panorams/5/4.jpg',
+                        mask: [],
+                        info: [],
+                        other: [
+                            {
+                                portal: '/panorams/5/1.jpg',
+                                position: [50, -11, -1],
+                                rotation: [0, 3.26, -0.17],
+                                scale: [1, 1, 1]
+                            },
+                            {
+                                portal: '/panorams/5/3.jpg',
+                                position: [29, -11, -3],
+                                rotation: [0, 4.76, 0],
+                                scale: [1, 1, 1]
+                            },
+                            {
+                                portal: '/panorams/5/5.jpg',
+                                position: [2, -10, -28],
+                                rotation: [0, -1.42, 0],
+                                scale: [1, 1, 1]
+                            },
+                        ]
+                    },
+                    {
+                        current: '/panorams/5/5.jpg',
+                        mask: [],
+                        info: [],
+                        other: [
+                            {
+                                portal: '/panorams/5/3.jpg',
+                                position: [-14, -9, -7.2],
+                                rotation: [0, -1.71, 0],
+                                scale: [1, 1, 1]
+                            },
+                            {
+                                portal: '/panorams/5/4.jpg',
+                                position: [22, -9, 3],
+                                rotation: [0, 3, 0],
+                                scale: [1, 1, 1]
+                            },
+                        ]
+                    },
+                    {
+                        current: '/panorams/5/6.jpg',
+                        mask: [],
+                        info: [],
+                        other: [
+                            {
+                                portal: '/panorams/5/2.jpg',
+                                position: [-11, -10, -11],
+                                rotation: [0, -0.13, 0],
+                                scale: [1, 1, 1]
+                            },
+                        ]
+                    }
+                ],
                 id: 5
             },
             {
@@ -175,14 +684,54 @@ const annotations = createSlice({
                 tag: 'annotation.sixth.tag',
                 location: 'annotation.sixth.location',
                 src: './img/pop_annotation/6.jpg',
-                link_ua: "https://storage.net-fs.com/hosting/7696236/8/",
-                link_en: "https://storage.net-fs.com/hosting/7696236/14/",
                 cameraPosition: [2.76, 5.58, -32.1],
                 color: ["#0d276b", "#0e3d02", "#8f680e", "#940807", "#2C1902", "#4a4848"],
                 annotationImage: "",
-                music: '0',
-                panorama: false,
-                panoramaStart: '',
+                music: '6',
+                panorama: true,
+                panoramaStart: '/panorams/6/1.jpg',
+                panoramaInteractive: [
+                    {
+                        current: '/panorams/6/1.jpg',
+                        mask: [],
+                        info: [
+                            {
+                                image: '/panorams/info.svg',
+                                position: [100, -8, -120],
+                                rotation: [0, -0.64, 0],
+                                scale: [25, 25, 1],
+                                content: {
+                                    title: 'panoramaPopUp.picking_shop.title',
+                                    text: [
+                                        'panoramaPopUp.picking_shop.text.1',
+                                        'panoramaPopUp.picking_shop.text.2'
+                                    ]
+                                }
+                            }
+                        ],
+                        other: [
+                            {
+                                portal: '/panorams/6/2.jpg',
+                                position: [15, -10, 3],
+                                rotation: [0, 2.38, 0],
+                                scale: [1, 1, 1]
+                            },
+                        ]
+                    },
+                    {
+                        current: '/panorams/6/2.jpg',
+                        mask: [],
+                        info: [],
+                        other: [
+                            {
+                                portal: '/panorams/6/1.jpg',
+                                position: [33, -12, -4],
+                                rotation: [0, -2.11, 0],
+                                scale: [1, 1, 1]
+                            },
+                        ]
+                    }
+                ],
                 id: 6
             },
             {
@@ -207,14 +756,218 @@ const annotations = createSlice({
                 tag: 'annotation.eighth.tag',
                 location: 'annotation.eighth.location',
                 src: './img/pop_annotation/8.jpg',
-                link_ua: "https://storage.net-fs.com/hosting/7696236/7/",
-                link_en: " https://storage.net-fs.com/hosting/7696236/12/",
                 cameraPosition: [-20.39, 5.31, 1.86],
                 color: ["#0d276b", "#0e3d02", "#8f680e", "#940807", "#2C1902", "#4a4848"],
                 annotationImage: "",
-                music: '0',
-                panorama: false,
-                panoramaStart: '',
+                music: '8',
+                panorama: true,
+                panoramaStart: '/panorams/8/1.jpg',
+                panoramaInteractive: [
+                    {
+                        current: '/panorams/8/1.jpg',
+                        mask: [],
+                        info: [
+                            {
+                                image: '/panorams/info.svg',
+                                position: [190, -40, -25],
+                                rotation: [0, -1.29, 0],
+                                scale: [25, 25, 1],
+                                content: {
+                                    title: 'panoramaPopUp.food_court.title',
+                                    text: [
+                                        'panoramaPopUp.food_court.text.1',
+                                        'panoramaPopUp.food_court.text.2'
+                                    ]
+                                }
+                            }
+                        ],
+                        other: [
+                            {
+                                portal: '/panorams/8/2.jpg',
+                                position: [20, -17, 12],
+                                rotation: [0, 2.65, 0],
+                                scale: [1, 1, 1]
+                            },
+                            {
+                                portal: '/panorams/8/3.jpg',
+                                position: [-19, -17, -22.2],
+                                rotation: [0, -1.35, 0],
+                                scale: [1, 1, 1]
+                            },
+                            {
+                                portal: '/panorams/8/4.jpg',
+                                position: [-12, -13, 22],
+                                rotation: [0, 0.85, 0],
+                                scale: [1, 1, 1]
+                            },
+                            {
+                                portal: '/panorams/8/5.jpg',
+                                position: [-34, -16, 47],
+                                rotation: [0, 0, 0],
+                                scale: [1, 1, 1]
+                            },
+                            {
+                                portal: '/panorams/8/6.jpg',
+                                position: [-42, -14, 18],
+                                rotation: [0, 0.8, 0],
+                                scale: [1, 1, 1]
+                            }
+                        ]
+                    },
+                    {
+                        current: '/panorams/8/2.jpg',
+                        mask: [],
+                        info: [
+                            {
+                                image: '/panorams/info.svg',
+                                position: [110, -33, -56],
+                                rotation: [0, -1.13, 0],
+                                scale: [25, 25, 1],
+                                content: {
+                                    title: 'panoramaPopUp.food_court.title',
+                                    text: [
+                                        'panoramaPopUp.food_court.text.1',
+                                        'panoramaPopUp.food_court.text.2'
+                                    ]
+                                }
+                            }
+                        ],
+                        other: [
+                            {
+                                portal: '/panorams/8/1.jpg',
+                                position: [-6, -17, -18],
+                                rotation: [0, -1.21, 0],
+                                scale: [1, 1, 1]
+                            },
+                            {
+                                portal: '/panorams/8/3.jpg',
+                                position: [-6, -16, -49],
+                                rotation: [0, -2.28, 0],
+                                scale: [1, 1, 1]
+                            },
+                            {
+                                portal: '/panorams/8/4.jpg',
+                                position: [-29, -15, -3.2],
+                                rotation: [0, 0.39, 0],
+                                scale: [1, 1, 1]
+                            },
+                        ]
+                    },
+                    {
+                        current: '/panorams/8/3.jpg',
+                        mask: [],
+                        info: [
+                            {
+                                image: '/panorams/info.svg',
+                                position: [150, -30, -185],
+                                rotation: [0, -0.34, 0],
+                                scale: [25, 25, 1],
+                                content: {
+                                    title: 'panoramaPopUp.food_court.title',
+                                    text: [
+                                        'panoramaPopUp.food_court.text.1',
+                                        'panoramaPopUp.food_court.text.2'
+                                    ]
+                                }
+                            }
+                        ],
+                        other: [
+                            {
+                                portal: '/panorams/8/1.jpg',
+                                position: [16, -17, -8],
+                                rotation: [0, -3.07, 0],
+                                scale: [1, 1, 1]
+                            },
+                            {
+                                portal: '/panorams/8/2.jpg',
+                                position: [36, -17, -18],
+                                rotation: [0, 3.67, 0],
+                                scale: [1, 1, 1]
+                            },
+                            {
+                                portal: '/panorams/8/6.jpg',
+                                position: [20, -17, 37],
+                                rotation: [0, -4, 0],
+                                scale: [1, 1, 1]
+                            },
+                        ]
+                    },
+                    {
+                        current: '/panorams/8/4.jpg',
+                        mask: [],
+                        info: [],
+                        other: [
+                            {
+                                portal: '/panorams/8/1.jpg',
+                                position: [-35, -16, -20],
+                                rotation: [0, -0.37, 0],
+                                scale: [1, 1, 1]
+                            },
+                            {
+                                portal: '/panorams/8/2.jpg',
+                                position: [-25, -16, -34],
+                                rotation: [0, -1.27, 0],
+                                scale: [1, 1, 1]
+                            },
+                            {
+                                portal: '/panorams/8/5.jpg',
+                                position: [15, -16, 15],
+                                rotation: [0, 1.9, 0],
+                                scale: [1, 1, 1]
+                            }
+                        ]
+                    },
+                    {
+                        current: '/panorams/8/5.jpg',
+                        mask: [],
+                        info: [],
+                        other: [
+                            {
+                                portal: '/panorams/8/4.jpg',
+                                position: [19, -16, 0.2],
+                                rotation: [0, 3.71, 0],
+                                scale: [1, 1, 1]
+                            },
+                            {
+                                portal: '/panorams/8/6.jpg',
+                                position: [-2, -16, -18],
+                                rotation: [0, -1.28, 0],
+                                scale: [1, 1, 1]
+                            },
+                            {
+                                portal: '/panorams/8/3.jpg',
+                                position: [30, -13, -44],
+                                rotation: [0, 4.17, -0.14],
+                                scale: [1, 1, 1]
+                            },
+                        ]
+                    },
+                    {
+                        current: '/panorams/8/6.jpg',
+                        mask: [],
+                        info: [],
+                        other: [
+                            {
+                                portal: '/panorams/8/5.jpg',
+                                position: [15, -16, 11],
+                                rotation: [0, -3.4, 0],
+                                scale: [1, 1, 1]
+                            },
+                            {
+                                portal: '/panorams/8/3.jpg',
+                                position: [-5, -16, -54],
+                                rotation: [0, -1.2, 0],
+                                scale: [1, 1, 1]
+                            },
+                            {
+                                portal: '/panorams/8/1.jpg',
+                                position: [12, -16, -51],
+                                rotation: [0, 4, 0],
+                                scale: [1, 1, 1]
+                            }
+                        ]
+                    }
+                ],
                 id: 8
             },
             {
@@ -223,14 +976,68 @@ const annotations = createSlice({
                 tag: 'annotation.ninth.tag',
                 location: 'annotation.ninth.location',
                 src: './img/pop_annotation/9.jpg',
-                link_ua: "https://storage.net-fs.com/hosting/7696236/9/",
-                link_en: "https://storage.net-fs.com/hosting/7696236/15/",
                 cameraPosition: [2.14, 8.05, -22.54],
                 color: ["#0d276b"],
                 annotationImage: "./img/annotations/paper.svg",
-                music: '0',
-                panorama: false,
-                panoramaStart: '',
+                music: '9',
+                panorama: true,
+                panoramaStart: '/panorams/9/1.jpg',
+                panoramaInteractive: [
+                    {
+                        current: '/panorams/9/1.jpg',
+                        mask: [],
+                        info: [
+                            {
+                                image: '/panorams/info.svg',
+                                position: [110, 60, -175],
+                                rotation: [0, -0.54, 0],
+                                scale: [25, 25, 1],
+                                content: {
+                                    title: 'panoramaPopUp.recycling_center.title',
+                                    text: [
+                                        'panoramaPopUp.recycling_center.text.1',
+                                        'panoramaPopUp.recycling_center.text.2'
+                                    ]
+                                }
+                            }
+                        ],
+                        other: [
+                            {
+                                portal: '/panorams/9/2.jpg',
+                                position: [-25, -7, 1],
+                                rotation: [0, 0.61, 0],
+                                scale: [1, 1, 1]
+                            }
+                        ]
+                    },
+                    {
+                        current: '/panorams/9/2.jpg',
+                        mask: [],
+                        info: [
+                            {
+                                image: '/panorams/info.svg',
+                                position: [110, -19, -140],
+                                rotation: [0, -0.74, 0],
+                                scale: [25, 25, 1],
+                                content: {
+                                    title: 'panoramaPopUp.recycling_center.title',
+                                    text: [
+                                        'panoramaPopUp.recycling_center.text.1',
+                                        'panoramaPopUp.recycling_center.text.2'
+                                    ]
+                                }
+                            }
+                        ],
+                        other: [
+                            {
+                                portal: '/panorams/9/1.jpg',
+                                position: [-25, -7, 12],
+                                rotation: [0, 0.47, -0.13],
+                                scale: [1, 1, 1]
+                            }
+                        ]
+                    }
+                ],
                 id: 9
             }
         ]

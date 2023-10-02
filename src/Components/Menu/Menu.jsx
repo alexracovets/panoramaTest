@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setIsIFrame, setDefaultPosition, setPointActive } from "../../store/reducers/camera.js";
 import { setTimerStop } from '../../store/reducers/timer.js';
 import { updateLinkDisable } from '../../store/reducers/menu.js';
+import { setClosePanorama } from '../../store/reducers/panorama.js';
 
 import s from './Menu.module.scss'
 import LanguageSwitch from '../LanguageSwitch/LanguageSwitch';
@@ -21,7 +22,8 @@ export default function Menu() {
         dispatch(setTimerStop());
         dispatch(setDefaultPosition());
         dispatch(setPointActive(false));
-        dispatch(updateLinkDisable())
+        dispatch(updateLinkDisable());
+        dispatch(setClosePanorama())
     }
     const buttonList = useSelector((state) => state.menu.btn);
     const linkList = useSelector((state) => state.menu.link);

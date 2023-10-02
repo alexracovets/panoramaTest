@@ -4,6 +4,7 @@
     right: 1.875rem;
     bottom: 1.25rem;
     width: 8.125rem;
+    pointer-events: none;
 
     @media (max-width:1024px) {
         bottom: 2.25rem;

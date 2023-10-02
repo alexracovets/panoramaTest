@@ -29,7 +29,6 @@ export default function CanvasContainer() {
             resizeObserver.disconnect();
         };
     }, []);
-
     return (
         <div className={s.canvas__container}>
             <Logo />

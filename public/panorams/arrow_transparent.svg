@@ -1,0 +1,21 @@
+<svg viewBox="0 0 550 350" width="600" height="350" xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path
+    style="
+      stroke-width:15px; 
+      stroke: rgb(255, 255, 255); 
+      fill-rule: evenodd; 
+      paint-order: stroke; 
+      fill: transparent;
+    "
+    d="
+      M 24.942 337.506
+      L 275.384 36.679
+      L 524.942 336.267
+      L 400.163 336.267
+      L 275.384 186.473
+      L 150.606 336.267
+      Z
+    "></path>
+</svg>
+ 

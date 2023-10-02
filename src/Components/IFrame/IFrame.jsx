@@ -17,11 +17,13 @@ export default function IFrame() {
     const annotation = useSelector((state) => state.annotation);
     const frame = useSelector((state) => state.camera.isIFrame);
     const music = useSelector((state) => state.annotation.music);
+    const isPanoramaPopUp = useSelector((state) => state.panorama.isPopUp);
     const isPanorama = useSelector((state) => state.panorama.isPanorama);
     const [isLoading, setIsLoading] = useState(true);
     const [audioObject, setAudioObject] = useState(null);
     const [isSoundOn, setIsSoundOn] = useState(true);
     const iframeRef = useRef(null);
+
 
     const toggleSound = () => {
         if (audioObject) {
@@ -54,6 +56,11 @@ export default function IFrame() {
     };
 
     useEffect(() => {
+        isPanoramaPopUp ? audioObject.pause() : null;
+
+    }, [isPanoramaPopUp])
+
+    useEffect(() => {
         if (music > 0) {
             const newAudioObject = new Audio(`./music/${music}/${i18n.language}.mp3`);
             setAudioObject(newAudioObject);
@@ -77,26 +84,26 @@ export default function IFrame() {
 
     useEffect(() => {
         if (music > 0) {
-            if (frame && audioObject && !isLoading) {
+            if ((frame || isPanorama) && audioObject) {
                 setTimeout(() => {
                     audioObject.play();
                 }, 1000);
-            } else if (!frame && audioObject) {
+            } else if (!frame && audioObject && !isPanorama) {
                 audioObject.pause();
                 audioObject.currentTime = 0;
                 setIsLoading(true);
             }
         }
-    }, [frame, audioObject, isLoading, music]);
+    }, [frame, isPanorama]);
 
     return (
         <>
+            {music > 0 && (isPanorama || frame) && (
+                <div className={s.iframe__soundButton} onClick={toggleSound}>
+                    <img src={isSoundOn ? SoundOn : SoundOff} alt="Sound" />
+                </div>
+            )}
             {frame && !isPanorama && <div className={s.iframe__wrapper}>
-                {music > 0 && (
-                    <div className={s.iframe__soundButton} onClick={toggleSound}>
-                        <img src={isSoundOn ? SoundOn : SoundOff} alt="Sound" />
-                    </div>
-                )}
                 <i className={s.iframe__close + ' bi bi-x'} onClick={closeIFrame}></i>
                 {isLoading && <Loader />}
                 <iframe ref={iframeRef} src={annotation.link} onLoad={handleIframeLoad}></iframe>
