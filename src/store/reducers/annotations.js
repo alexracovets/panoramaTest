@@ -36,7 +36,6 @@ const annotations = createSlice({
                             },
                             {
                                 image: '/panorams/1/mask/1_2.png',
-                                args: [38.2, 44.3],
                                 position: [261, -93, -98],
                                 rotation: [-0.72, -0.99, -0.67],
                                 scale: [5.0, 5.25, 1],
@@ -52,9 +51,8 @@ const annotations = createSlice({
                         info: [
                             {
                                 image: '/panorams/info.svg',
-                                position: [90, -25, -200],
-                                rotation: [0, -0.6, 0],
-                                scale: [25, 25, 1],
+                                position: [10, -2.7, -22.4],
+                                rotation: [1.57, 0, 0.31],
                                 content: {
                                     title: 'panoramaPopUp.street.title',
                                     text: [
@@ -65,9 +63,8 @@ const annotations = createSlice({
                             },
                             {
                                 image: '/panorams/info.svg',
-                                position: [255, -30, -87],
-                                rotation: [-0.30, -0.90, -0.10],
-                                scale: [25, 25, 1],
+                                position: [25, -2.6, -8.5],
+                                rotation: [1.57, 0, 1.21],
                                 content: {
                                     title: 'panoramaPopUp.street.title',
                                     text: [
@@ -100,9 +97,8 @@ const annotations = createSlice({
                         info: [
                             {
                                 image: '/panorams/info.svg',
-                                position: [100, 8, -150],
-                                rotation: [0, -0.796, 0],
-                                scale: [25, 25, 1],
+                                position: [10, 1, -15],
+                                rotation: [1.57, 0.04, 0.56],
                                 content: {
                                     title: 'panoramaPopUp.floor.first.title',
                                     text: [
@@ -127,9 +123,8 @@ const annotations = createSlice({
                         info: [
                             {
                                 image: '/panorams/info.svg',
-                                position: [70, -45, -180],
-                                rotation: [0, -0.34, 0],
-                                scale: [25, 25, 1],
+                                position: [7.40, -4.7, -19],
+                                rotation: [1.47, -0.07, 0.27],
                                 content: {
                                     title: 'panoramaPopUp.floor.second.title',
                                     text: [
@@ -237,9 +232,8 @@ const annotations = createSlice({
                         info: [
                             {
                                 image: '/panorams/info.svg',
-                                position: [26, -9, -141],
-                                rotation: [0, 0, 0],
-                                scale: [25, 25, 1],
+                                position: [2.87, -1.02, -16],
+                                rotation: [1.57, 0, 0.28],
                                 content: {
                                     title: 'panoramaPopUp.kaizen.title',
                                     text: [
@@ -481,9 +475,8 @@ const annotations = createSlice({
                         info: [
                             {
                                 image: '/panorams/info.svg',
-                                position: [165, -30, -130],
-                                rotation: [0, -0.79, 0],
-                                scale: [25, 25, 1],
+                                position: [18, -3.27, -14.23],
+                                rotation: [1.6, 0.12, 0.76],
                                 content: {
                                     title: 'panoramaPopUp.reception.title',
                                     text: [
@@ -509,9 +502,8 @@ const annotations = createSlice({
                         info: [
                             {
                                 image: '/panorams/info.svg',
-                                position: [250, -20, -30],
-                                rotation: [0, -1.57, 0],
-                                scale: [25, 25, 1],
+                                position: [27, -2.1, -3.24],
+                                rotation: [1.57, 0, 1.52],
                                 content: {
                                     title: 'panoramaPopUp.reception.title',
                                     text: [
@@ -697,9 +689,8 @@ const annotations = createSlice({
                         info: [
                             {
                                 image: '/panorams/info.svg',
-                                position: [100, -8, -120],
-                                rotation: [0, -0.64, 0],
-                                scale: [25, 25, 1],
+                                position: [11.88, -0.93, -14.2],
+                                rotation: [1.57, 0, 0.63],
                                 content: {
                                     title: 'panoramaPopUp.picking_shop.title',
                                     text: [
@@ -769,9 +760,8 @@ const annotations = createSlice({
                         info: [
                             {
                                 image: '/panorams/info.svg',
-                                position: [190, -40, -25],
-                                rotation: [0, -1.29, 0],
-                                scale: [25, 25, 1],
+                                position: [16, -3.27, -2.00],
+                                rotation: [1.50, -0.13, 1.34],
                                 content: {
                                     title: 'panoramaPopUp.food_court.title',
                                     text: [
@@ -820,9 +810,8 @@ const annotations = createSlice({
                         info: [
                             {
                                 image: '/panorams/info.svg',
-                                position: [110, -33, -56],
-                                rotation: [0, -1.13, 0],
-                                scale: [25, 25, 1],
+                                position: [12.82, -3.82, -6.54],
+                                rotation: [1.45, -0.26, 0.97],
                                 content: {
                                     title: 'panoramaPopUp.food_court.title',
                                     text: [
@@ -859,9 +848,8 @@ const annotations = createSlice({
                         info: [
                             {
                                 image: '/panorams/info.svg',
-                                position: [150, -30, -185],
-                                rotation: [0, -0.34, 0],
-                                scale: [25, 25, 1],
+                                position: [15.37, -3, -19],
+                                rotation: [1.57, 0.15, 0.78],
                                 content: {
                                     title: 'panoramaPopUp.food_court.title',
                                     text: [
@@ -989,9 +977,8 @@ const annotations = createSlice({
                         info: [
                             {
                                 image: '/panorams/info.svg',
-                                position: [110, 60, -175],
-                                rotation: [0, -0.54, 0],
-                                scale: [25, 25, 1],
+                                position: [10.74, 5.87, -17],
+                                rotation: [1.57, 0, 0.46],
                                 content: {
                                     title: 'panoramaPopUp.recycling_center.title',
                                     text: [
@@ -1016,9 +1003,8 @@ const annotations = createSlice({
                         info: [
                             {
                                 image: '/panorams/info.svg',
-                                position: [110, -19, -140],
-                                rotation: [0, -0.74, 0],
-                                scale: [25, 25, 1],
+                                position: [11.95, -2.09, -15.22],
+                                rotation: [1.57, 0, 0.52],
                                 content: {
                                     title: 'panoramaPopUp.recycling_center.title',
                                     text: [

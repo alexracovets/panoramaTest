@@ -10,7 +10,7 @@ export async function loadMaterial(link, func, loader) {
 		texture.colorSpace = THREE.SRGBColorSpace;
 		const material = new THREE.MeshLambertMaterial({ map: texture, side: THREE.BackSide });
 		func(material);
-		setTimeout(() => loader(false), 1000)
+		setTimeout(() => loader(false), 500)
 	} catch (error) {
 		console.error(`Error loading texture: ${link}`, error);
 	}

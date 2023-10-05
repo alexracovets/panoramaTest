@@ -1,19 +1,23 @@
-import React from "react";
+import React from 'react';
 import PropTypes from 'prop-types';
-import { Plane } from "@react-three/drei"
 import { useDispatch } from 'react-redux';
+import { useGLTF } from "@react-three/drei";
+import { Info } from './info/Info.jsx';
 
-Info.propTypes = {
+Infos.propTypes = {
     currentPortal: PropTypes.oneOfType([
         PropTypes.array,
         PropTypes.object
     ]),
     textureInfo: PropTypes.array.isRequired
 };
-
 import { setPopUpContent } from '../../../store/reducers/panorama.js';
 
-export default function Info({ currentPortal, textureInfo }) {
+
+export default function Infos({ currentPortal, textureInfo }) {
+
+    const { nodes, materials, animations } = useGLTF("models/info.gltf");
+
     const dispatch = useDispatch();
 
     const openPopUp = (content) => {
@@ -35,18 +39,21 @@ export default function Info({ currentPortal, textureInfo }) {
                 if (info === undefined) return null;
 
                 return (
-                    <Plane
+                    <Info
                         key={index}
-                        material={material}
                         position={info.position}
                         rotation={info.rotation}
-                        scale={info.scale}
                         onPointerOver={() => handlePlanePointerOver()}
                         onPointerOut={() => handlePlanePointerOut()}
                         onClick={() => openPopUp(info.content)}
+                        nodes={nodes}
+                        materials={materials}
+                        animations={animations}
                     />
                 )
             })}
         </>
     )
 }
+
+useGLTF.preload("models/info.gltf");

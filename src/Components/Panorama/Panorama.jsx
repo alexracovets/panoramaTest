@@ -7,7 +7,7 @@ import { loadMaterial } from "../../static/loadTexture.js";
 import { loadMaterials } from "../../static/loadMaterials.js";
 
 import Arrows from "./Arrows/Arrows.jsx";
-import Info from "./Info/Info.jsx";
+import Infos from "./Infos/Infos.jsx";
 import Mask from "./Mask/Mask.jsx";
 import ClosePanorama from "./ClosePanorama/ClosePanorama.jsx";
 
@@ -75,7 +75,7 @@ export default function MyScene() {
                     intensity={1} />
                 <Photo texture={texture} />
                 <Mask currentPortal={currentPortal} textureMask={textureMask} />
-                <Info currentPortal={currentPortal} textureInfo={textureInfo} />
+                <Infos currentPortal={currentPortal} textureInfo={textureInfo} />
                 <Arrows currentPortal={currentPortal} portals={portals} setLoader={setLoader} loader={loader} />
                 <Camera loader={loader} />
                 {/* {
@@ -86,7 +86,6 @@ export default function MyScene() {
                         scale={[control.scale, control.scale, 1]}
                     />
                 } */}
-
             </Canvas>
             <PopUpPanorama findItem={findItem} />
             <ClosePanorama />
