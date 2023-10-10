@@ -10,17 +10,21 @@ import Arrows from "./Arrows/Arrows.jsx";
 import Infos from "./Infos/Infos.jsx";
 import Mask from "./Mask/Mask.jsx";
 import ClosePanorama from "./ClosePanorama/ClosePanorama.jsx";
+import { useDispatch } from 'react-redux';
 
 import Photo from "./Photo/Photo.jsx";
 import Loader from "./Loader/Loader.jsx";
 import Camera from "./Camera/Camera.jsx";
 import PopUpPanorama from './PopUpPanorama/PopUpPanorama.jsx';
 
+import { setTimerReset } from '../../store/reducers/timer.js';
+
 import s from "./Panorama.module.scss";
 // import { useControls } from 'leva';
 // import { Arrow } from './Arrows/Arrow/Arrow.jsx';
 
 export default function MyScene() {
+    const dispatch = useDispatch();
     const panorama = useSelector((state) => state.panorama);
     const [loader, setLoader] = useState(true);
     const [currentPortal, setCurrentPortal] = useState(null);
@@ -64,12 +68,15 @@ export default function MyScene() {
     //     loadMaterial("/panorams/info.svg", setMeInfo, setLoader);
     // }, [currentPortal]);
 
+    const handleResetTimer = () => { 
+        dispatch(setTimerReset());
+    };
     return (
         <>
             {
                 loader ? <Loader /> : null
             }
-            <Canvas camera={{ position: [0, 0, 0.1], fov: 75 }} className={s.panorama} color="white" >
+            <Canvas camera={{ position: [0, 0, 0.1], fov: 75 }} className={s.panorama} color="white" onMouseMove={() => handleResetTimer()}>
                 <OrbitControls target={[0, 0, 0]} maxPolarAngle={Math.PI / 1.6} minPolarAngle={Math.PI / 2.9} />
                 <ambientLight // eslint-disable-next-line react/no-unknown-property 
                     intensity={1} />

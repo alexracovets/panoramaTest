@@ -19,14 +19,14 @@ export default function TimerToBack() {
     const isShow = useSelector((state) => state.timer.isShow);
 
     // Перетворення часу в проміжок від 0 до 100
-    const percentage = 100 + 1 - (time / 180) * 100 + '%';
+    const percentage = 100 + 1 - (time / 30) * 100 + '%';
 
     // Запуск таймера
     useEffect(() => {
         if (isInitiated) {
             const intervalId = setInterval(() => {
                 dispatch(setTimerCount(time));
-                time <= 30 && dispatch(setTimerShow());
+                time <= 15 && dispatch(setTimerShow());
                 time <= 0 &&
                     dispatch(setTimerStop()) &&
                     dispatch(setIsIFrame()) &&

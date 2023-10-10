@@ -4,20 +4,20 @@ const timer = createSlice({
     name: 'timer',
     initialState: {
         status: false,
-        time: 180,
+        time: 30,
         isShow: false,
     },
     reducers: {
         setTimerInitial: (state) => {
             state.isShow = false;
-            state.time = 180;
+            state.time = 30;
             state.status = true;
         },
         setTimerCount: (state) => {
             state.time = state.time - 1;
         },
         setTimerReset: (state) => {
-            state.time = 180;
+            state.time = 30;
             state.isShow = false;
         },
         setTimerShow: (state) => {
@@ -25,7 +25,7 @@ const timer = createSlice({
         },
         setTimerStop: (state) => {
             state.isShow = false;
-            state.time = 180;
+            state.time = 30;
             state.status = false;
         }
     },
