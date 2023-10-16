@@ -12,7 +12,7 @@ export async function loadMaterials(array, func, opacityValue) {
         });
         const opacity = opacityValue;
         texture.colorSpace = THREE.SRGBColorSpace;
-        const material = new THREE.MeshStandardMaterial({ map: texture, transparent: true, side: THREE.FrontSide, opacity: opacity });
+        const material = new THREE.MeshStandardMaterial({ map: texture, transparent: true, side: THREE.DoubleSide, opacity: opacity });
         loadedMaterials.push(material);
     }));
 

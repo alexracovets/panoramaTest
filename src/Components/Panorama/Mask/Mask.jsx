@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from 'prop-types';
-import { Plane } from "@react-three/drei"
-import { useDispatch } from 'react-redux';
+import { Plane, Sphere } from "@react-three/drei" 
+import { useDispatch } from 'react-redux'; 
 
 Mask.propTypes = {
     currentPortal: PropTypes.oneOfType([
@@ -11,7 +11,7 @@ Mask.propTypes = {
     textureMask: PropTypes.array.isRequired
 };
 
-import { setPopUpContent } from '../../../store/reducers/panorama.js';
+import { setPopUpContent } from '../../../store/reducers/panorama.js'; 
 
 export default function Mask({ currentPortal, textureMask }) {
     const dispatch = useDispatch();
@@ -21,7 +21,7 @@ export default function Mask({ currentPortal, textureMask }) {
     }
 
     const handlePlanePointerOver = (material) => {
-        if (material) material.opacity = 0.3;
+        if (material) material.opacity = 1;
         document.body.style.cursor = 'pointer';
     };
 
@@ -35,17 +35,20 @@ export default function Mask({ currentPortal, textureMask }) {
             {textureMask && textureMask.map((material, index) => {
                 const mask = currentPortal.mask[index];
                 return (
-                    <Plane
-                        key={index}
-                        material={material}
-                        args={mask.args}
-                        position={mask.position}
-                        rotation={mask.rotation}
-                        scale={mask.scale}
-                        onPointerOver={() => handlePlanePointerOver(material)}
-                        onPointerOut={() => handlePlanePointerOut(material)}
-                        onClick={() => openPopUp(mask.content)}
-                    />
+                    <>
+                        <Sphere args={[500, 60, 60]} scale={[1, 1, 1]} rotation={[0, 0.9, 0]} material={material} />
+                        <Plane
+                            key={index}
+                            args={mask.args}
+                            position={mask.position}
+                            rotation={mask.rotation}
+                            scale={mask.scale}
+                            onPointerOver={() => handlePlanePointerOver(material)}
+                            onPointerOut={() => handlePlanePointerOut(material)}
+                            onClick={() => openPopUp(mask.content)}
+                            visible={false}
+                        />
+                    </>
                 )
             })}
         </>

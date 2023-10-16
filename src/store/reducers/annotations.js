@@ -21,7 +21,7 @@ const annotations = createSlice({
                         current: '/panorams/1/1.jpg',
                         mask: [
                             {
-                                image: '/panorams/1/mask/1_1.png',
+                                image: '/panorams/1/mask/1.png',
                                 args: [38.2, 44.3],
                                 position: [167.40, -131.64, -329.4],
                                 rotation: [-0.42, -0.41, -0.19],
@@ -35,7 +35,8 @@ const annotations = createSlice({
                                 }
                             },
                             {
-                                image: '/panorams/1/mask/1_2.png',
+                                image: '/panorams/1/mask/2.png',
+                                args: [38.2, 44.3],
                                 position: [261, -93, -98],
                                 rotation: [-0.72, -0.99, -0.67],
                                 scale: [5.0, 5.25, 1],

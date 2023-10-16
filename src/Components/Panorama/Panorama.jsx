@@ -19,7 +19,7 @@ import PopUpPanorama from './PopUpPanorama/PopUpPanorama.jsx';
 
 import { setTimerReset } from '../../store/reducers/timer.js';
 
-import s from "./Panorama.module.scss";
+import s from "./Panorama.module.scss"; 
 // import { useControls } from 'leva';
 // import { Arrow } from './Arrows/Arrow/Arrow.jsx';
 
@@ -68,9 +68,10 @@ export default function MyScene() {
     //     loadMaterial("/panorams/info.svg", setMeInfo, setLoader);
     // }, [currentPortal]);
 
-    const handleResetTimer = () => { 
+    const handleResetTimer = () => {
         dispatch(setTimerReset());
     };
+
     return (
         <>
             {
