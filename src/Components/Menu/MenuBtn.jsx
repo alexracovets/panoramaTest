@@ -1,9 +1,7 @@
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 import {
-    setDisabledAnnotation,
-    removeDisabledAnnotation,
     toggleButtonStatus
 } from '../../store/reducers/annotationContent.js';
 import { updateAnnotationColors } from '../../store/reducers/annotations.js';
@@ -15,9 +13,6 @@ export default function MenuBtn(button) {
     const { t } = useTranslation();
     // Отримуємо дані зі стору
     const dispatch = useDispatch();
-    const disabledAnnotation = useSelector((state) => state.annotation.disabledAnnotation);
-    const annotationsByButton = useSelector((state) => state.annotation.annotationsByButton);
-    const buttonStatuses = useSelector((state) => state.annotation.buttonStatuses);
 
     // Приховання або показ анотацій
     const showAnnotation = (event, marker) => {

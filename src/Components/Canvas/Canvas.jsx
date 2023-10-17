@@ -1,26 +1,17 @@
-import React, { Suspense} from 'react';
+import React, { Suspense } from 'react';
 import { ResizeObserver } from '@juggle/resize-observer'
 import { Clone, useGLTF } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
 import { useSelector } from 'react-redux';
+import { WebGLRenderer } from 'three';
+const WebGL2Renderer = WebGLRenderer;
 
 import Annotations from '../Annotations/Annotations';
 import MyCamera from '../MyCamera/MyCamera';
 
 export default function CanvasContainer() {
-    // Отримиємо шлях до моделі
-    // const [modelPath, setModelPath] = useState('./models/main.glb');
-    // // Перевірка на IOS
-    // useEffect(() => {
-    //     const isIOSMobile = /iPhone|iPod|iPad/.test(navigator.userAgent) && !window.MSStream;
-    //     if (isIOSMobile) {
-    //         setModelPath('./models/mobile.glb');
-    //     }
-    // }, []);
-
     // Завантаження моделі
     const { scene } = useGLTF('./models/main.glb');
-
     // Початкова позиція камери
     const defaultPosition = useSelector((state) => state.camera.defaultPosition);
     // Масштабування моделі
@@ -28,7 +19,11 @@ export default function CanvasContainer() {
 
     return (
         <Suspense fallback={null}>
-            <Canvas camera={{ position: defaultPosition }} resize={{ polyfill: ResizeObserver }}>
+            <Canvas
+                camera={{ position: defaultPosition }}
+                resize={{ polyfill: ResizeObserver }}
+                gl={{ renderer: new WebGL2Renderer() }}
+            >
                 {/* eslint-disable-next-line react/no-unknown-property */}
                 <ambientLight intensity={1} />
                 {/* eslint-disable-next-line react/no-unknown-property */}

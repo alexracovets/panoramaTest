@@ -2,6 +2,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+Circle.propTypes = {
+    colors: PropTypes.arrayOf(PropTypes.string).isRequired,
+};
 export default function Circle({ colors }) {
     // Розміри кола
     const scale = 5;
@@ -61,7 +64,3 @@ export default function Circle({ colors }) {
         </svg>
     );
 }
-
-Circle.propTypes = {
-    colors: PropTypes.arrayOf(PropTypes.string).isRequired,
-};
