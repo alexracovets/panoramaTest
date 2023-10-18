@@ -2,26 +2,22 @@ import React, { useEffect, useState } from 'react';
 import { OrbitControls } from "@react-three/drei";
 import { useSelector } from "react-redux";
 import { Canvas } from "@react-three/fiber";
-
+import { useDispatch } from 'react-redux';
 import { loadMaterial } from "../../static/loadTexture.js";
 import { loadMaterials } from "../../static/loadMaterials.js";
 
-import Arrows from "./Arrows/Arrows.jsx";
-import Infos from "./Infos/Infos.jsx";
 import Mask from "./Mask/Mask.jsx";
-import ClosePanorama from "./ClosePanorama/ClosePanorama.jsx";
-import { useDispatch } from 'react-redux';
-
+import Infos from "./Infos/Infos.jsx";
 import Photo from "./Photo/Photo.jsx";
+import Arrows from "./Arrows/Arrows.jsx";
 import Loader from "./Loader/Loader.jsx";
 import Camera from "./Camera/Camera.jsx";
 import PopUpPanorama from './PopUpPanorama/PopUpPanorama.jsx';
+import ClosePanorama from "./ClosePanorama/ClosePanorama.jsx";
 
 import { setTimerReset } from '../../store/reducers/timer.js';
 
-import s from "./Panorama.module.scss"; 
-// import { useControls } from 'leva';
-// import { Arrow } from './Arrows/Arrow/Arrow.jsx';
+import s from "./Panorama.module.scss";
 
 export default function MyScene() {
     const dispatch = useDispatch();
@@ -51,23 +47,6 @@ export default function MyScene() {
         setCurrentPortal(findItem);
     }, [findItem]);
 
-    // const control = useControls({
-    //     positionX: 26,
-    //     positionY: -9,
-    //     positionZ: -141,
-    //     rotationX: 0,
-    //     rotationY: 3.14,
-    //     rotationZ: 0,
-    //     scale: 25,
-    // })
-
-
-    // const [meInfo, setMeInfo] = useState([]);
-
-    // useEffect(() => {
-    //     loadMaterial("/panorams/info.svg", setMeInfo, setLoader);
-    // }, [currentPortal]);
-
     const handleResetTimer = () => {
         dispatch(setTimerReset());
     };
@@ -86,14 +65,6 @@ export default function MyScene() {
                 <Infos currentPortal={currentPortal} textureInfo={textureInfo} />
                 <Arrows currentPortal={currentPortal} portals={portals} setLoader={setLoader} loader={loader} />
                 <Camera loader={loader} />
-                {/* {
-                    meInfo && <Plane
-                        material={meInfo}
-                        position={[control.positionX, control.positionY, control.positionZ]}
-                        rotation={[control.rotationX, control.rotationY, control.rotationZ]}
-                        scale={[control.scale, control.scale, 1]}
-                    />
-                } */}
             </Canvas>
             <PopUpPanorama findItem={findItem} />
             <ClosePanorama />

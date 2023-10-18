@@ -120,7 +120,34 @@ const annotations = createSlice({
                     },
                     {
                         current: '/panorams/2/2.jpg',
-                        mask: [],
+                        mask: [
+                            {
+                                image: '/panorams/2/mask/1.png',
+                                args: [1.3, 0.5],
+                                position: [0.87, -1.75, -4],
+                                rotation: [-0.05, -0.17, 0.03],
+                                scale: [1, 1, 1],
+                                content: {
+                                    title: 'panoramaPopUp.floor.second.title',
+                                    text: [
+                                        'panoramaPopUp.floor.second.text.1'
+                                    ]
+                                }
+                            },
+                            {
+                                image: '/panorams/2/mask/2.png',
+                                args: [3.4, 1.3],
+                                position: [0.15, -3.79, -4.13],
+                                rotation: [-0.05, -0.17, 0.03],
+                                scale: [1, 1, 1],
+                                content: {
+                                    title: 'panoramaPopUp.floor.second.title',
+                                    text: [
+                                        'panoramaPopUp.floor.second.text.1'
+                                    ]
+                                }
+                            }
+                        ],
                         info: [
                             {
                                 image: '/panorams/info.svg',
@@ -974,7 +1001,36 @@ const annotations = createSlice({
                 panoramaInteractive: [
                     {
                         current: '/panorams/9/1.jpg',
-                        mask: [],
+                        mask: [
+                            {
+                                image: '/panorams/9/mask/1.png',
+                                args: [3.3, 5.6],
+                                position: [1.11, -1.14, -6],
+                                rotation: [0.07, -0.42, 0],
+                                scale: [1, 1, 1],
+                                content: {
+                                    title: 'panoramaPopUp.recycling_center.title',
+                                    text: [
+                                        'panoramaPopUp.recycling_center.text.1',
+                                        'panoramaPopUp.recycling_center.text.2'
+                                    ]
+                                }
+                            },
+                            {
+                                image: '/panorams/9/mask/2.png',
+                                args: [4.8, 8.3],
+                                position: [8.5, -1.34, -5.53],
+                                rotation: [-0.03, -0.46, 0],
+                                scale: [1, 1, 1],
+                                content: {
+                                    title: 'panoramaPopUp.recycling_center.title',
+                                    text: [
+                                        'panoramaPopUp.recycling_center.text.1',
+                                        'panoramaPopUp.recycling_center.text.2'
+                                    ]
+                                }
+                            }
+                        ],
                         info: [
                             {
                                 image: '/panorams/info.svg',

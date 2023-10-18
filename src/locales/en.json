@@ -60,62 +60,63 @@
     },
     "panoramaPopUp": {
         "street": {
-            "title": "Клітки для збору пластикових пляшок",
+            "title": "Cages for collecting plastic bottles",
             "text": {
-                "1": "Встановлені вуличні клітки, куди можна викидати використані пластикові пляшки, попередньо очищені та зім'яті до плаского стану або скручені, щоб займати менше місця.",
-                "2": "Зібраний пластик відправляють на переробку для повторного використання."
+                "1": "Street cages have been installed where used plastic bottles can be thrown away, pre-cleaned and crumpled to a flat state or twisted to take up less space.",
+                "2": "The collected plastic is sent for recycling and reuse."
             }
         },
         "kaizen": {
-            "title": "Kaizen парк",
+            "title": "Kaizen park",
             "text": {
-                "1": "Це зелені легені нашого офісу, місце, де під час перерви можна відпочити у природній зоні або ж провести робочу зустріч на свіжому повітрі.",
-                "2": "Тут облаштовані пішохідні доріжки та встановлені лавки з навісом.",
-                "3": "Дерева на території парку створюють затишок та приємний затінок від сонця. Зелені насадження позитивно впливають на міський клімат, затримують пил, гази і, таким чином, сприяють очищенню повітря."
+                "1": "This is our Office's green lungs, where you can relax in a natural area during a break or hold a working meeting in the open air.",
+                "2": "There are pedestrian walkways and benches with a canopy.",
+                "3": "Trees in the park create a cozy atmosphere and a pleasant shade from the sun. Green spaces have a positive impact on the urban climate, retain dust and gases, and thus contribute to air purification."
             }
         },
         "reception": {
-            "title": "Бокси для збору використаних батарейок та одноразових електронних сигарет",
+            "title": "Boxes for collecting used batteries and disposable e-cigarettes",
             "text": {
-                "1": "Використані батарейки містять у собі низку небезпечних токсичних складових, як свинець, марганець, літій і цинк.",
-                "2": "Якщо їх викидати на звичайні звалища, а не переробляти, то токсини починають отруювати воду і ґрунт, а також те, що росте поблизу.",
-                "3": "Не меншою загрозою для довкілля є й одноразові електронні сигарети, споживання яких різко зросло в останні роки й тим самим загострило проблему їх утилізації."
+                "1": "Used batteries contain a number of dangerous toxic components, such as lead, manganese, lithium, and zinc.",
+                "2": "If they are dumped in conventional landfills instead of being recycled, the toxins begin to poison water and soil, as well as plants growing nearby.",
+                "3": "Disposable e-cigarettes pose no less of a threat to the environment, as their consumption has increased dramatically in recent years, aggravating the problem of their disposal.",
+                "4": "By throwing used batteries into special boxes, you take care of safe disposal. And used e-cigarette batteries become raw materials for reuse."
             }
         },
         "floor": {
             "first": {
-                "title": "Контейнери для сортування сміття",
+                "title": "Containers for waste sorting",
                 "text": {
-                    "1": "Встановлені контейнери для сортування сміття (біо, метал, скло, пластик, макулатура та інші відходи).",
-                    "2": "Сортування допомагає перетворювати сміття на ресурс: робити з нього речі чи енергію, та зменшувати кількість сміттєзвалищ, а відповідно захищати екосистеми від руйнування."
+                    "1": "Containers for waste sorting (bio, metal, glass, plastic, waste paper and other waste) are installed.",
+                    "2": "Sorting helps to turn waste into a resource: to make things or energy from it, and to reduce the number of landfills, and thus protect ecosystems from destruction."
                 }
             },
             "second": {
                 "title": "Подрібнювач Харчових Відходів",
                 "text": {
-                    "1": "Також на фудкорті під раковиною для миття посуду встановлений подрібнювач харчових відходів - це екологічне рішення для переробки залишків їжі."
+                    "1": "The food court also has a food waste shredder under the sink - an eco-friendly solution for recycling leftovers."
                 }
             }
         },
         "food_court": {
-            "title": "Контейнери для сортування сміття",
+            "title": "Containers for waste sorting",
             "text": {
-                "1": "Встановлені контейнери для сортування сміття (біо, метал, скло, пластик, макулатура та інші відходи).",
-                "2": "Сортування допомагає перетворювати сміття на ресурс: робити з нього речі чи енергію, та зменшувати кількість сміттєзвалищ, а відповідно захищати екосистеми від руйнування."
+                "1": "Containers for waste sorting (bio, metal, glass, plastic, waste paper and other waste) are installed.",
+                "2": "Sorting helps to turn waste into a resource: to make things or energy from it, and to reduce the number of landfills, and thus protect ecosystems from destruction."
             }
         },
         "recycling_center": {
-            "title": "Центр Переробки Вторинної Сировини",
+            "title": "Recycling Center",
             "text": {
-                "1": "Тут використані та зібрані для переробки макулатура й стрейч-плівка пресуються в компактні тюки, внаслідок чого їх об’єм зменшується в рази.",
-                "2": "Це дозволяє звільнити складські площі. Вторсировину в такому вигляді зручніше перевозити для подальшої переробки та повторного використання."
+                "1": "Here, used and collected waste paper and stretch wrap are pressed into compact bales, which reduces their volume by several times.",
+                "2": "This helps to free up storage space. This makes it easier to transport recyclables for further processing and reuse."
             }
         },
         "picking_shop": {
             "title": "Контейнери для сортування сміття",
             "text": {
-                "1": "Встановлені контейнери для сортування сміття (біо, метал, скло, пластик, макулатура та інші відходи).",
-                "2": "Сортування допомагає перетворювати сміття на ресурс: робити з нього речі чи енергію, та зменшувати кількість сміттєзвалищ, а відповідно захищати екосистеми від руйнування."
+                "1": "Containers for waste sorting (bio, metal, glass, plastic, waste paper and other waste) are installed.",
+                "2": "Sorting helps to turn waste into a resource: to make things or energy from it, and to reduce the number of landfills, and thus protect ecosystems from destruction."
             }
         }
     },

@@ -3,9 +3,6 @@ import { ResizeObserver } from '@juggle/resize-observer'
 import { Clone, useGLTF } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
 import { useSelector } from 'react-redux';
-import { WebGLRenderer } from 'three';
-const WebGL2Renderer = WebGLRenderer;
-
 import Annotations from '../Annotations/Annotations';
 import MyCamera from '../MyCamera/MyCamera';
 
@@ -22,7 +19,6 @@ export default function CanvasContainer() {
             <Canvas
                 camera={{ position: defaultPosition }}
                 resize={{ polyfill: ResizeObserver }}
-                gl={{ renderer: new WebGL2Renderer() }}
             >
                 {/* eslint-disable-next-line react/no-unknown-property */}
                 <ambientLight intensity={1} />
