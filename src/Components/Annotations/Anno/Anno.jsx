@@ -20,7 +20,8 @@ export default function Anno({ item }) {
     const dispatch = useDispatch();
     const menuBtn = useSelector((state) => state.menu.btn);
 
-    const handleAnnotationClick = () => {
+    const handleAnnotationClick = (event) => {
+        event.stopPropagation();
         dispatch(setPanoramaImage(item.panoramaStart));
         dispatch(setPanoramaInteractive(item.panoramaInteractive));
         dispatch(setAnnotationPosition(item));
