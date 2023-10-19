@@ -3,9 +3,9 @@ import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from 'react-redux';
 
 import { setIsIFrame, setDefaultPosition, setPointActive } from "../../store/reducers/camera.js";
-import { setTimerStop } from '../../store/reducers/timer.js';
+import { setClosePanorama, setMainLoader } from '../../store/reducers/panorama.js';
 import { updateLinkDisable } from '../../store/reducers/menu.js';
-import { setClosePanorama } from '../../store/reducers/panorama.js';
+import { setTimerStop } from '../../store/reducers/timer.js';
 
 import s from './Menu.module.scss'
 import LanguageSwitch from '../LanguageSwitch/LanguageSwitch';
@@ -23,7 +23,8 @@ export default function Menu() {
         dispatch(setDefaultPosition());
         dispatch(setPointActive(false));
         dispatch(updateLinkDisable());
-        dispatch(setClosePanorama())
+        dispatch(setClosePanorama());
+        dispatch(setMainLoader(false))
     }
     const buttonList = useSelector((state) => state.menu.btn);
     const linkList = useSelector((state) => state.menu.link);

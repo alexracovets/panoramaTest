@@ -1,0 +1,47 @@
+.loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 100000;
+    background-color: #FFE100;
+
+    .video {
+        position: relative;
+
+        video {
+            height: auto;
+            width: 100%;
+        }
+
+        .text {
+            font-size: 1.125rem;
+            color: #777777;
+            position: absolute;
+            left: 0;
+            bottom: 10rem;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end; 
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    }
+
+}
+
+
+@keyframes roller {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

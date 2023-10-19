@@ -122,5 +122,6 @@
     },
     "isHere": "Are you here?",
     "yes": "Yes",
-    "link": "Open Link"
+    "link": "Open Link",
+    "loadTour": "Downloading a virtual tour..."
 }

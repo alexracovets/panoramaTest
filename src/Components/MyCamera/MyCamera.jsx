@@ -1,13 +1,19 @@
-import React from 'react';
-import { useEffect, useRef, useCallback  } from 'react';
+import React, { useState } from 'react';
+import { useEffect, useRef, useCallback } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { OrbitControls } from '@react-three/drei';
 import { useThree, useFrame } from '@react-three/fiber';
 import { gsap } from 'gsap';
+import * as THREE from 'three';
 
 import { setPositionUnChanged } from '../../store/reducers/camera.js';
 
 export default function MyCamera() {
+    const [lastInteractionTime, setLastInteractionTime] = useState(Date.now());
+
+    const updateLastInteractionTime = () => {
+        setLastInteractionTime(Date.now());
+    };
 
     // Отримуємо дані зі стору
     const dispatch = useDispatch();
@@ -27,10 +33,19 @@ export default function MyCamera() {
         targetPosition: { x: targetPoint[0], y: targetPoint[1], z: targetPoint[2] }
     });
 
-    // Відключення контекстного меню
+    const updateTimerAndDisableAutoRotate = () => {
+        updateLastInteractionTime();
+        controls.current.autoRotate = false;
+    };
+
     const handleContextMenu = useCallback(() => {
         dispatch(setPositionUnChanged());
+        updateTimerAndDisableAutoRotate();
     }, [dispatch]);
+
+    const handleCanvasInteraction = useCallback(() => {
+        updateTimerAndDisableAutoRotate();
+    }, []);
 
     useEffect(() => {
         const domElement = gl.domElement;
@@ -40,20 +55,36 @@ export default function MyCamera() {
         };
     }, [gl.domElement, handleContextMenu]);
 
-    // Анімація камери на кожному кадрі
     useFrame(() => {
-        if (controls.current) {
-            controls.current.update();
-            controls.current.maxDistance = animatableProps.current.maxDistance;
+        if (isPositionChanged) {
+            controls.current.target.lerp(
+                new THREE.Vector3(
+                    animatableProps.current.targetPosition.x,
+                    animatableProps.current.targetPosition.y,
+                    animatableProps.current.targetPosition.z
+                ), 0.1);
         }
-        isPositionChanged && controls.current.target.set(animatableProps.current.targetPosition.x, animatableProps.current.targetPosition.y, animatableProps.current.targetPosition.z);
+        const timeSinceInteraction = Date.now() - lastInteractionTime;
+        if (timeSinceInteraction > 5000) {
+            controls.current.autoRotate = true;
+        } else {
+            controls.current.autoRotate = false;
+        }
     });
+
+    useEffect(() => {
+        const domElement = gl.domElement;
+        domElement.addEventListener('contextmenu', handleContextMenu);
+        domElement.addEventListener('pointerdown', handleCanvasInteraction);
+
+        return () => {
+            domElement.removeEventListener('contextmenu', handleContextMenu);
+            domElement.removeEventListener('pointerdown', handleCanvasInteraction);
+        };
+    }, [gl.domElement, handleContextMenu, handleCanvasInteraction]);
 
     // Анімація камери при зміні позиції
     useEffect(() => {
-
-        // Вимикаємо керування камерою
-        controls.current.enabled = false;
 
         // Анімація позиції камери
         gsap.to(camera.position, {
@@ -87,13 +118,14 @@ export default function MyCamera() {
             ease: "sine.inOut"
         });
 
-    },  [cameraPosition, maxDistance, targetPoint, camera.position]);
+    }, [cameraPosition, maxDistance, targetPoint, camera.position]);
 
     return (
         <OrbitControls
             ref={controls}
             args={[camera, gl.domElement]}
             rotateSpeed={0.3}
+            autoRotate={false}
             zoomSpeed={3}
             panSpeed={0.8}
             minPolarAngle={-Math.PI / 2}

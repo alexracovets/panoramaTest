@@ -1,15 +1,16 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useSelector, useDispatch } from "react-redux";
-import Loader from '../Loader/Loader';
 import { useTranslation } from "react-i18next";
 import SoundOn from './sound/on.svg';
 import SoundOff from './sound/off.svg';
 
 import { setIsIFrame, setDefaultPosition } from "../../store/reducers/camera.js";
-import { setTimerStop } from '../../store/reducers/timer.js';
+import { setTimerStop, setTimerReset } from '../../store/reducers/timer.js';
 import { updateLinkDisable } from '../../store/reducers/menu.js';
+import { setMainLoader } from '../../store/reducers/panorama.js';
 
 import s from "./IFrame.module.scss";
+import LoaderMain from '../LoaderMain/LoaderMain';
 
 export default function IFrame() {
     const { i18n } = useTranslation();
@@ -23,7 +24,7 @@ export default function IFrame() {
     const [audioObject, setAudioObject] = useState(null);
     const [isSoundOn, setIsSoundOn] = useState(true);
     const iframeRef = useRef(null);
-
+    const mainLoader = useSelector((state) => state.panorama.mainLoader);
 
     const toggleSound = () => {
         if (audioObject) {
@@ -45,6 +46,7 @@ export default function IFrame() {
         dispatch(setTimerStop());
         dispatch(setDefaultPosition());
         dispatch(updateLinkDisable());
+        dispatch(setMainLoader(false))
     };
 
     const handleIframeLoad = () => {
@@ -83,7 +85,7 @@ export default function IFrame() {
     }, [audioObject]);
 
     useEffect(() => {
-        if (music > 0) {
+        if ((music > 0) && mainLoader) {
             if ((frame || isPanorama) && audioObject) {
                 setTimeout(() => {
                     audioObject.play();
@@ -94,18 +96,37 @@ export default function IFrame() {
                 setIsLoading(true);
             }
         }
-    }, [frame, isPanorama]);
+    }, [frame, isPanorama, mainLoader]);
 
+    useEffect(() => {
+        if (!mainLoader) {
+            if (audioObject) {
+                audioObject.pause();
+                audioObject.currentTime = 0;
+                setIsLoading(true);
+            }
+        }
+    }, [mainLoader])
+
+    const [lastResetTime, setLastResetTime] = useState(0);
+
+    const handleMouseMove = () => {
+        const currentTime = Date.now();
+        if (currentTime - lastResetTime > 1000) {  // Перевірка, чи пройшло більше 1с  
+            dispatch(setTimerReset());
+            setLastResetTime(currentTime);
+        }
+    };
     return (
         <>
-            {music > 0 && (isPanorama || frame) && (
+            {music > 0 && (isPanorama || frame) && mainLoader && (
                 <div className={s.iframe__soundButton} onClick={toggleSound}>
                     <img src={isSoundOn ? SoundOn : SoundOff} alt="Sound" />
                 </div>
             )}
-            {frame && !isPanorama && <div className={s.iframe__wrapper}>
+            {frame && !isPanorama && <div className={s.iframe__wrapper} onMouseMove={handleMouseMove}>
+                {mainLoader ? null : <LoaderMain isLoading={isLoading} />}
                 <i className={s.iframe__close + ' bi bi-x'} onClick={closeIFrame}></i>
-                {isLoading && <Loader />}
                 <iframe ref={iframeRef} src={annotation.link} onLoad={handleIframeLoad}></iframe>
             </div>}
         </>

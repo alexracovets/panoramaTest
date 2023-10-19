@@ -18,11 +18,13 @@ import ClosePanorama from "./ClosePanorama/ClosePanorama.jsx";
 import { setTimerReset } from '../../store/reducers/timer.js';
 
 import s from "./Panorama.module.scss";
+import LoaderMain from '../LoaderMain/LoaderMain.jsx';
 
 export default function MyScene() {
     const dispatch = useDispatch();
     const panorama = useSelector((state) => state.panorama);
     const [loader, setLoader] = useState(true);
+    const [isFirstTextureLoaded, setIsFirstTextureLoaded] = useState(true);
     const [currentPortal, setCurrentPortal] = useState(null);
     const [texture, setTexture] = useState(null);
     const [textureMask, setTextureMask] = useState([]);
@@ -47,16 +49,23 @@ export default function MyScene() {
         setCurrentPortal(findItem);
     }, [findItem]);
 
-    const handleResetTimer = () => {
-        dispatch(setTimerReset());
+    const [lastResetTime, setLastResetTime] = useState(0);
+
+    const handleMouseMove = () => {
+        const currentTime = Date.now();
+        if (currentTime - lastResetTime > 1000) {  // Перевірка, чи пройшло більше 1с 
+            dispatch(setTimerReset());
+            setLastResetTime(currentTime);
+        }
     };
 
     return (
         <>
             {
-                loader ? <Loader /> : null
+                isFirstTextureLoaded ? <LoaderMain setIsFirstTextureLoaded={setIsFirstTextureLoaded} texture={texture} /> : null
             }
-            <Canvas camera={{ position: [0, 0, 0.1], fov: 75 }} className={s.panorama} color="white" onMouseMove={() => handleResetTimer()}>
+
+            <Canvas camera={{ position: [0, 0, 0.1], fov: 75 }} className={s.panorama} color="white" onMouseMove={handleMouseMove}>
                 <OrbitControls target={[0, 0, 0]} maxPolarAngle={Math.PI / 1.6} minPolarAngle={Math.PI / 2.9} />
                 <ambientLight // eslint-disable-next-line react/no-unknown-property 
                     intensity={1} />
@@ -68,6 +77,9 @@ export default function MyScene() {
             </Canvas>
             <PopUpPanorama findItem={findItem} />
             <ClosePanorama />
+            {
+                loader && !isFirstTextureLoaded ? <Loader /> : null
+            }
         </>
     );
 }

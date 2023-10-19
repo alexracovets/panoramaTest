@@ -14,7 +14,7 @@ export default function ClosePanorama() {
         dispatch(setClosePanorama());
         dispatch(setTimerStop());
         dispatch(setReset());
-        dispatch(setDefaultPosition());
+        dispatch(setDefaultPosition()); 
     };
 
     return (

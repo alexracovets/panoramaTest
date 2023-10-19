@@ -12,7 +12,8 @@ const panorama = createSlice({
         popUpContent: {
             title: '',
             text: []
-        }
+        },
+        mainLoader: false
     },
     reducers: {
         setPanorama: (state, action) => {
@@ -31,6 +32,7 @@ const panorama = createSlice({
             state.currentPanorama = null;
             state.isPanorama = false;
             state.panoramaInteractive = null;
+            state.mainLoader = false;
         },
         setPopUpContent: (state, action) => {
             state.popUpContent = action.payload;
@@ -39,7 +41,10 @@ const panorama = createSlice({
         setPopUpClose: (state) => {
             state.popUpContent = { title: '', text: [] };
             state.isPopUp = false;
-        }
+        },
+        setMainLoader: (state, action) => {
+            state.mainLoader = action.payload
+        },
     }
 });
 
@@ -50,7 +55,8 @@ export const {
     setIsPortal,
     setClosePanorama,
     setPopUpContent,
-    setPopUpClose
+    setPopUpClose,
+    setMainLoader
 } = panorama.actions;
 
 export default panorama.reducer;
