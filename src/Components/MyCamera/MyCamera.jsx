@@ -124,7 +124,7 @@ export default function MyCamera() {
         <OrbitControls
             ref={controls}
             args={[camera, gl.domElement]}
-            rotateSpeed={0.3}
+            rotateSpeed={0.15}
             autoRotate={false}
             zoomSpeed={3}
             panSpeed={0.8}
