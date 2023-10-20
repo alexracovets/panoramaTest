@@ -7,9 +7,8 @@ import i18n from './utils/i18n'
 import store from './store/store';
 import App from './App';
 
+import './global/fonts.scss';
 import './index.css';
-
-
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 

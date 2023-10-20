@@ -1,3 +1,5 @@
+@import '../../global/variable.scss';
+
 .menu {
     position: relative;
     display: flex;
@@ -7,10 +9,10 @@
     height: calc(100vh - 4.5rem);
     max-width: 18.75rem;
     padding: 2rem;
-    background: #FFE100;
+    background: $base-yellow;
     margin-right: 0.5rem;
-    box-shadow: 0 0 0.5rem 0 #867312;
-    border-radius: 5rem;
+    box-shadow: 0 0 0.5rem 0 $yellow-shedow;
+    border-radius: 2rem;
 
     @media (max-width:1024px) {
         position: absolute;
@@ -42,9 +44,10 @@
         font-size: 2rem;
         font-weight: bold;
         text-align: center;
+        font-family: $font-rounds;
         width: calc(100% - 15%);
         padding-bottom: 0.625rem;
-        border-bottom: 0.1875rem solid black;
+        border-bottom: 0.1875rem solid $base-black;
         cursor: pointer;
 
         @media (max-width:1024px) {
@@ -62,8 +65,7 @@
         z-index: 0;
         font-size: 1.1875rem;
         text-align: left;
-        color: white;
-        font-family: 'Oswald', sans-serif;
+        color: $base-gray;
         font-weight: 300;
         display: flex;
         justify-content: space-between;
@@ -79,6 +81,10 @@
         border-radius: 1rem;
         box-shadow: 0.125rem 0.25rem 0 #00000020;
         cursor: pointer;
+
+        &:hover {
+            color: $base-white;
+        }
 
         &.disable {
             opacity: 0.4;
@@ -106,6 +112,8 @@
             width: 100%;
             pointer-events: none;
             padding-left: 1rem;
+            font-family: $font-mont;
+            font-weight: bold;
 
             @media (max-width:1024px) {
                 display: none;
@@ -114,7 +122,7 @@
 
         .btn__image {
             width: 100%;
-            max-width: 70px;
+            max-width: 4.375rem;
             height: 100%;
             display: flex;
             justify-content: center;

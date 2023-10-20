@@ -1,3 +1,5 @@
+@import '../../global/variable.scss';
+
 .popUp {
     position: absolute;
     z-index: -1;
@@ -9,7 +11,7 @@
     flex-direction: column;
     width: 100%;
     max-width: 25rem;
-    background: white;
+    background: $base-white;
     transform: translate(-50%, -50%);
     padding: 1rem 1.125rem;
     border-radius: 1.375rem;
@@ -35,10 +37,10 @@
         right: -2.375rem;
         top: -2.375rem;
         font-size: 2rem;
-        color: black;
+        color: $base-black;
         display: grid;
         place-items: center;
-        background: #FFE00B;
+        background: $base-yellow;
         width: 2.75rem;
         height: 2.75rem;
         border-radius: 50%;
@@ -46,10 +48,13 @@
     }
 
     .popUp__title {
-        color: black;
-        font-size: 1.625rem;
+        color: $base-black;
+        font-size: 1.2rem;
+        text-align: center;
+        font-family: $font-rounds;
+        font-weight: bold;
         letter-spacing: 0.0375rem;
-        background: #FFE00B;
+        background: $base-yellow;
         padding: 0.625rem 3rem;
         border-radius: 3.125rem;
 
@@ -62,20 +67,30 @@
 
     .popUp__location {
         font-size: 1rem;
-        font-weight: bold;
         width: 100%;
         text-align: center;
         font-size: 1rem;
-        background: #FFE00B;
+        background: $base-yellow;
         padding: 0.875rem 0.875rem;
         border-radius: 0.875rem;
+
+        p {
+            font-family: $font-rubik;
+            letter-spacing: 0.01rem;
+            font-weight: 900;
+        }
     }
 
     .popUp__tag {
         font-size: 0.9rem;
-        font-weight: bold;
         text-align: center;
+        margin-top: 0.5rem;
 
+        p {
+            font-family: $font-mont;
+            letter-spacing: 0.01rem;
+            font-weight: bold;
+        }
     }
 
     img {
@@ -87,20 +102,26 @@
     }
 
     button {
-        font-size: 1.125rem;
-        color: black;
-        font-weight: 600;
-        letter-spacing: 0.05rem;
-        text-decoration: none;
-        display: grid;
-        place-items: center;
-        width: calc(100% - 5%);
-        height: 3.125rem;
-        background: #FFE00B;
-        padding: 0.5rem;
+        font-size: 1.25rem;
+        color: $base-black;
+        font-family: $font-mont;
+        font-weight: 500;
+        text-transform: uppercase;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 3.5rem;
+        background: $base-yellow;
+        padding: 0 1.5rem;
         border: none;
-        border-radius: 1.875rem;
-        transition: all 0.4s ease;
+        border-radius: 3rem;
         cursor: pointer;
+
+        svg {
+            margin-left: 1.25rem;
+            width: 1rem;
+            height: auto;
+        }
     }
 }

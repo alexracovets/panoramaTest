@@ -19,7 +19,7 @@ export default function PopUpPanorama() {
     return (
         <div className={isPopUp ? s.active + ' ' + s.popUp : s.popUp}>
             <div className={s.content}>
-                <div className={s.cross} onClick={() => closePopUp()}>X</div>
+                <i className={s.cross + ' bi bi-x'} onClick={() => closePopUp()}></i> 
                 <div className={s.title}>
                     {t(content.title)}
                 </div>

@@ -1,3 +1,5 @@
+@import '../../../global/variable.scss';
+
 .popUp {
     display: flex;
     justify-content: center;
@@ -15,29 +17,35 @@
     .content {
         width: 100%;
         max-width: 43.75rem;
-        min-height: 15.625rem;
         background-color: white;
-        padding: 1rem;
-        border-radius: 0.5rem;
+        padding: 2rem 1.5rem;
+        border-radius: 2rem;
         position: relative;
 
         .title {
             font-size: 1.2rem;
             margin-bottom: 1.5rem;
+            padding: 0 3rem;
+            text-align: center;
+            font-weight: 600;
+            font-family: $font-mont;
         }
 
         .text {
             p {
                 font-size: 1rem;
                 text-indent: 1rem;
+                text-align: justify;
+                font-family: $font-mont;
+                margin-bottom: 0.5rem;
             }
         }
 
         .cross {
             position: absolute;
-            right: 0.5rem;
-            top: 0.5rem;
-            font-size: 1rem;
+            right: 1rem;
+            top: 1rem;
+            font-size: 2rem;
             font-weight: bold;
             font-family: cursive;
             width: 1.5rem;
